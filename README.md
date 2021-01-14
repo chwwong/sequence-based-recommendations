@@ -1,4 +1,14 @@
 # Collaborative filtering based on sequences
+This is based on Robin De Vooght's sequence based recommendations
+Includes my custom data and tweaks
+* knowledge based recommender (expert study plan recommendation)
+* constraint filter (pre-req rules)
+
+also intent to add the following recommenders from Wang, Zaiane 2018
+* process mining
+* Dependency graph
+* Sequential pattern mining (SPM)
+
 This python library includes multiple collaboraborative filtering algorithm that make use of the sequence of actions of the user: they not only use the fact that a user rated a certain item, but also that he rated before this other item or after that other one.
 Some standard algorithms that do not use sequence information are also present for easier comparison.
 
