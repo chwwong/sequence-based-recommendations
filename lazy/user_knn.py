@@ -25,10 +25,11 @@ class UserKNN(Lazy):
 		'''Load the data from the training file into a format adapted for the KNN methods.
 		'''
 		filename = dataset.dirname + 'data/train_set_triplets'
+
 		if os.path.isfile(filename + '.npy'):
 			file_content = np.load(filename + '.npy')
 		else:
-			file_content = np.loadtxt(filename)
+			file_content = np.loadtxt(filename,dtype='int')
 			np.save(filename, file_content)
 
 		#self.user_item = ssp.coo_matrix((file_content[:,2], (file_content[:,0], file_content[:,1]))).tocsr()

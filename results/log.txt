@@ -1,0 +1,3413 @@
+
+(base) C:\Users\chris>cd \dropbox\phd\sequence-based-recommendations
+
+(base) C:\dropbox\phD\sequence-based-recommendations>dir
+ Volume in drive C is WIN10
+ Volume Serial Number is 42A3-BCF6
+
+ Directory of C:\dropbox\phD\sequence-based-recommendations
+
+13/11/2020  12:39 AM    <DIR>          .
+13/11/2020  12:39 AM    <DIR>          ..
+13/11/2020  12:10 AM    <DIR>          data
+13/11/2020  12:38 AM               515 Dockerfile
+13/11/2020  12:38 AM    <DIR>          factorization
+13/11/2020  12:38 AM    <DIR>          helpers
+13/11/2020  12:38 AM    <DIR>          lazy
+13/11/2020  12:38 AM             1,092 LICENSE
+13/11/2020  12:23 AM    <DIR>          models
+13/11/2020  12:38 AM    <DIR>          neural_networks
+13/11/2020  12:38 AM            12,867 preprocess.py
+13/11/2020  12:38 AM            22,479 README.md
+13/11/2020  12:38 AM                47 requirements.txt
+30/11/2019  07:30 PM    <DIR>          results
+13/11/2020  12:38 AM             6,091 test.py
+13/11/2020  12:38 AM             2,596 train.py
+13/11/2020  12:38 AM    <DIR>          word2vec
+13/11/2020  12:38 AM                 0 __init__.py
+               8 File(s)         45,687 bytes
+              10 Dir(s)  15,180,402,688 bytes free
+
+(base) C:\dropbox\phD\sequence-based-recommendations>type requirements.txt
+Theano>=0.8.2
+Gensim==0.13.1
+pandas==0.19.2
+
+(base) C:\dropbox\phD\sequence-based-recommendations>conda create -n srs2 theano>=0.8.2 gensim==0.13.1 pandas==0.19.2 python=2.7
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - gensim==0.13.1
+  - pandas==0.19.2
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(base) C:\dropbox\phD\sequence-based-recommendations>dir
+ Volume in drive C is WIN10
+ Volume Serial Number is 42A3-BCF6
+
+ Directory of C:\dropbox\phD\sequence-based-recommendations
+
+13/11/2020  12:40 AM    <DIR>          .
+13/11/2020  12:40 AM    <DIR>          ..
+13/11/2020  12:40 AM               304 0.8.2
+13/11/2020  12:10 AM    <DIR>          data
+13/11/2020  12:38 AM               515 Dockerfile
+13/11/2020  12:38 AM    <DIR>          factorization
+13/11/2020  12:38 AM    <DIR>          helpers
+13/11/2020  12:38 AM    <DIR>          lazy
+13/11/2020  12:38 AM             1,092 LICENSE
+13/11/2020  12:23 AM    <DIR>          models
+13/11/2020  12:38 AM    <DIR>          neural_networks
+13/11/2020  12:38 AM            12,867 preprocess.py
+13/11/2020  12:38 AM            22,479 README.md
+13/11/2020  12:38 AM                47 requirements.txt
+30/11/2019  07:30 PM    <DIR>          results
+13/11/2020  12:38 AM             6,091 test.py
+13/11/2020  12:38 AM             2,596 train.py
+13/11/2020  12:38 AM    <DIR>          word2vec
+13/11/2020  12:38 AM                 0 __init__.py
+               9 File(s)         45,991 bytes
+              10 Dir(s)  15,180,402,688 bytes free
+
+(base) C:\dropbox\phD\sequence-based-recommendations>del 0.8.2
+
+(base) C:\dropbox\phD\sequence-based-recommendations>conda create -n srs2 "theano>=0.8.2 gensim==0.13.1 pandas==0.19.2 python=2.7"
+
+CondaValueError: invalid package specification: theano>=0.8.2 gensim==0.13.1 pandas==0.19.2 python=2.7
+
+
+(base) C:\dropbox\phD\sequence-based-recommendations>conda create -n srs2 theano gensim==0.13.1 pandas==0.19.2 python=2.7"
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: failed
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - pandas==0.19.2
+  - gensim==0.13.1
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(base) C:\dropbox\phD\sequence-based-recommendations>conda create -n srs2 theano "gensim>=0.13.1" "pandas>=0.19.2" python=2.7
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with repodata from current_repodata.json, will retry with next repodata source.
+Collecting package metadata (repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: c:\anaconda3\srs2
+
+  added / updated specs:
+    - gensim[version='>=0.13.1']
+    - pandas[version='>=0.19.2']
+    - python=2.7
+    - theano
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    blas-1.0                   |              mkl           6 KB
+    boto-2.49.0                |           py27_0         1.2 MB
+    boto3-1.16.15              |     pyhd3eb1b0_0          70 KB
+    botocore-1.19.15           |     pyhd3eb1b0_0         3.3 MB
+    bz2file-0.98               |           py27_1          14 KB
+    cffi-1.13.2                |   py27hcfb25f9_0         217 KB
+    chardet-3.0.4              |        py27_1003         189 KB
+    cryptography-2.8           |   py27hcfb25f9_0         496 KB
+    docutils-0.15.2            |           py27_0         678 KB
+    enum34-1.1.6               |           py27_1          57 KB
+    futures-3.3.0              |           py27_0          29 KB
+    gensim-3.8.0               |   py27h39f3610_0        18.3 MB
+    icc_rt-2019.0.0            |       h0cc432a_1         6.0 MB
+    intel-openmp-2020.2        |              254         1.6 MB
+    ipaddress-1.0.23           |             py_0          22 KB
+    libgpuarray-0.7.6          |       h0c8e037_0         243 KB
+    libpython-2.1              |           py27_0        38.9 MB
+    m2w64-gcc-libgfortran-5.3.0|                6         340 KB
+    m2w64-gcc-libs-5.3.0       |                7         518 KB
+    m2w64-gcc-libs-core-5.3.0  |                7         213 KB
+    m2w64-gmp-6.1.0            |                2         689 KB
+    m2w64-libwinpthread-git-5.0.0.4634.697f757|                2          30 KB
+    markupsafe-1.1.1           |   py27h0c8e037_0          29 KB
+    mkl-2020.2                 |              256       109.3 MB
+    mkl-service-2.3.0          |   py27h0b88c2a_0         209 KB
+    mkl_fft-1.0.15             |   py27h44c1dab_0         115 KB
+    msys2-conda-epoch-20160418 |                1           2 KB
+    numpy-1.16.6               |   py27hcd21bde_0          49 KB
+    numpy-base-1.16.6          |   py27hb1d0314_0         3.2 MB
+    openssl-1.1.1e             |       h0c8e037_0         3.9 MB
+    pandas-0.24.2              |   py27hc56fc5f_0         7.3 MB
+    pip-19.3.1                 |           py27_0         1.7 MB
+    pygpu-0.7.6                |   py27hc997a72_0         465 KB
+    pyopenssl-19.1.0           |             py_1          48 KB
+    pysocks-1.7.1              |           py27_0          31 KB
+    python-2.7.18              |       hfb89ab9_0        15.5 MB
+    python-dateutil-2.8.1      |             py_0         215 KB
+    pytz-2020.1                |             py_0         184 KB
+    s3transfer-0.3.0           |           py27_0         100 KB
+    scipy-1.2.1                |   py27h4c3ab11_0        11.0 MB
+    setuptools-44.0.0          |           py27_0         528 KB
+    six-1.15.0                 |             py_0          13 KB
+    smart_open-1.9.0           |             py_0          56 KB
+    sqlite-3.30.1              |       h0c8e037_0         588 KB
+    theano-1.0.4               |           py27_0         3.2 MB
+    urllib3-1.25.7             |           py27_0         170 KB
+    vc-9                       |       h7299396_1           3 KB
+    vs2008_runtime-9.00.30729.1|       hfaea7d5_1         500 KB
+    wheel-0.35.1               |             py_0          37 KB
+    win_inet_pton-1.1.0        |           py27_0           9 KB
+    wincertstore-0.2           |   py27hf04cefb_0          14 KB
+    ------------------------------------------------------------
+                                           Total:       231.1 MB
+
+The following NEW packages will be INSTALLED:
+
+  asn1crypto         pkgs/main/noarch::asn1crypto-1.4.0-py_0
+  blas               pkgs/main/win-64::blas-1.0-mkl
+  boto               pkgs/main/win-64::boto-2.49.0-py27_0
+  boto3              pkgs/main/noarch::boto3-1.16.15-pyhd3eb1b0_0
+  botocore           pkgs/main/noarch::botocore-1.19.15-pyhd3eb1b0_0
+  bz2file            pkgs/main/win-64::bz2file-0.98-py27_1
+  ca-certificates    pkgs/main/win-64::ca-certificates-2020.10.14-0
+  certifi            pkgs/main/noarch::certifi-2020.6.20-pyhd3eb1b0_3
+  cffi               pkgs/main/win-64::cffi-1.13.2-py27hcfb25f9_0
+  chardet            pkgs/main/win-64::chardet-3.0.4-py27_1003
+  cryptography       pkgs/main/win-64::cryptography-2.8-py27hcfb25f9_0
+  docutils           pkgs/main/win-64::docutils-0.15.2-py27_0
+  enum34             pkgs/main/win-64::enum34-1.1.6-py27_1
+  futures            pkgs/main/win-64::futures-3.3.0-py27_0
+  gensim             pkgs/main/win-64::gensim-3.8.0-py27h39f3610_0
+  icc_rt             pkgs/main/win-64::icc_rt-2019.0.0-h0cc432a_1
+  idna               pkgs/main/noarch::idna-2.10-py_0
+  intel-openmp       pkgs/main/win-64::intel-openmp-2020.2-254
+  ipaddress          pkgs/main/noarch::ipaddress-1.0.23-py_0
+  jmespath           pkgs/main/noarch::jmespath-0.10.0-py_0
+  libgpuarray        pkgs/main/win-64::libgpuarray-0.7.6-h0c8e037_0
+  libpython          pkgs/main/win-64::libpython-2.1-py27_0
+  m2w64-binutils     pkgs/msys2/win-64::m2w64-binutils-2.25.1-5
+  m2w64-bzip2        pkgs/msys2/win-64::m2w64-bzip2-1.0.6-6
+  m2w64-crt-git      pkgs/msys2/win-64::m2w64-crt-git-5.0.0.4636.2595836-2
+  m2w64-gcc          pkgs/msys2/win-64::m2w64-gcc-5.3.0-6
+  m2w64-gcc-ada      pkgs/msys2/win-64::m2w64-gcc-ada-5.3.0-6
+  m2w64-gcc-fortran  pkgs/msys2/win-64::m2w64-gcc-fortran-5.3.0-6
+  m2w64-gcc-libgfor~ pkgs/msys2/win-64::m2w64-gcc-libgfortran-5.3.0-6
+  m2w64-gcc-libs     pkgs/msys2/win-64::m2w64-gcc-libs-5.3.0-7
+  m2w64-gcc-libs-co~ pkgs/msys2/win-64::m2w64-gcc-libs-core-5.3.0-7
+  m2w64-gcc-objc     pkgs/msys2/win-64::m2w64-gcc-objc-5.3.0-6
+  m2w64-gmp          pkgs/msys2/win-64::m2w64-gmp-6.1.0-2
+  m2w64-headers-git  pkgs/msys2/win-64::m2w64-headers-git-5.0.0.4636.c0ad18a-2
+  m2w64-isl          pkgs/msys2/win-64::m2w64-isl-0.16.1-2
+  m2w64-libiconv     pkgs/msys2/win-64::m2w64-libiconv-1.14-6
+  m2w64-libmangle-g~ pkgs/msys2/win-64::m2w64-libmangle-git-5.0.0.4509.2e5a9a2-2
+  m2w64-libwinpthre~ pkgs/msys2/win-64::m2w64-libwinpthread-git-5.0.0.4634.697f757-2
+  m2w64-make         pkgs/msys2/win-64::m2w64-make-4.1.2351.a80a8b8-2
+  m2w64-mpc          pkgs/msys2/win-64::m2w64-mpc-1.0.3-3
+  m2w64-mpfr         pkgs/msys2/win-64::m2w64-mpfr-3.1.4-4
+  m2w64-pkg-config   pkgs/msys2/win-64::m2w64-pkg-config-0.29.1-2
+  m2w64-toolchain    pkgs/msys2/win-64::m2w64-toolchain-5.3.0-7
+  m2w64-tools-git    pkgs/msys2/win-64::m2w64-tools-git-5.0.0.4592.90b8472-2
+  m2w64-windows-def~ pkgs/msys2/win-64::m2w64-windows-default-manifest-6.4-3
+  m2w64-winpthreads~ pkgs/msys2/win-64::m2w64-winpthreads-git-5.0.0.4634.697f757-2
+  m2w64-zlib         pkgs/msys2/win-64::m2w64-zlib-1.2.8-10
+  mako               pkgs/main/noarch::mako-1.1.3-py_0
+  markupsafe         pkgs/main/win-64::markupsafe-1.1.1-py27h0c8e037_0
+  mkl                pkgs/main/win-64::mkl-2020.2-256
+  mkl-service        pkgs/main/win-64::mkl-service-2.3.0-py27h0b88c2a_0
+  mkl_fft            pkgs/main/win-64::mkl_fft-1.0.15-py27h44c1dab_0
+  msys2-conda-epoch  pkgs/msys2/win-64::msys2-conda-epoch-20160418-1
+  numpy              pkgs/main/win-64::numpy-1.16.6-py27hcd21bde_0
+  numpy-base         pkgs/main/win-64::numpy-base-1.16.6-py27hb1d0314_0
+  openssl            pkgs/main/win-64::openssl-1.1.1e-h0c8e037_0
+  pandas             pkgs/main/win-64::pandas-0.24.2-py27hc56fc5f_0
+  pip                pkgs/main/win-64::pip-19.3.1-py27_0
+  pycparser          pkgs/main/noarch::pycparser-2.20-py_2
+  pygpu              pkgs/main/win-64::pygpu-0.7.6-py27hc997a72_0
+  pyopenssl          pkgs/main/noarch::pyopenssl-19.1.0-py_1
+  pysocks            pkgs/main/win-64::pysocks-1.7.1-py27_0
+  python             pkgs/main/win-64::python-2.7.18-hfb89ab9_0
+  python-dateutil    pkgs/main/noarch::python-dateutil-2.8.1-py_0
+  pytz               pkgs/main/noarch::pytz-2020.1-py_0
+  requests           pkgs/main/noarch::requests-2.24.0-py_0
+  s3transfer         pkgs/main/win-64::s3transfer-0.3.0-py27_0
+  scipy              pkgs/main/win-64::scipy-1.2.1-py27h4c3ab11_0
+  setuptools         pkgs/main/win-64::setuptools-44.0.0-py27_0
+  six                pkgs/main/noarch::six-1.15.0-py_0
+  smart_open         pkgs/main/noarch::smart_open-1.9.0-py_0
+  sqlite             pkgs/main/win-64::sqlite-3.30.1-h0c8e037_0
+  theano             pkgs/main/win-64::theano-1.0.4-py27_0
+  urllib3            pkgs/main/win-64::urllib3-1.25.7-py27_0
+  vc                 pkgs/main/win-64::vc-9-h7299396_1
+  vs2008_runtime     pkgs/main/win-64::vs2008_runtime-9.00.30729.1-hfaea7d5_1
+  wheel              pkgs/main/noarch::wheel-0.35.1-py_0
+  win_inet_pton      pkgs/main/win-64::win_inet_pton-1.1.0-py27_0
+  wincertstore       pkgs/main/win-64::wincertstore-0.2-py27hf04cefb_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+scipy-1.2.1          | 11.0 MB   | ############################################################################ | 100%
+m2w64-gcc-libs-5.3.0 | 518 KB    | ############################################################################ | 100%
+m2w64-libwinpthread- | 30 KB     | ############################################################################ | 100%
+enum34-1.1.6         | 57 KB     | ############################################################################ | 100%
+pytz-2020.1          | 184 KB    | ############################################################################ | 100%
+smart_open-1.9.0     | 56 KB     | ############################################################################ | 100%
+ipaddress-1.0.23     | 22 KB     | ############################################################################ | 100%
+mkl-2020.2           | 109.3 MB  | ############################################################################ | 100%
+markupsafe-1.1.1     | 29 KB     | ############################################################################ | 100%
+blas-1.0             | 6 KB      | ############################################################################ | 100%
+pandas-0.24.2        | 7.3 MB    | ############################################################################ | 100%
+cffi-1.13.2          | 217 KB    | ############################################################################ | 100%
+mkl-service-2.3.0    | 209 KB    | ############################################################################ | 100%
+six-1.15.0           | 13 KB     | ############################################################################ | 100%
+wincertstore-0.2     | 14 KB     | ############################################################################ | 100%
+icc_rt-2019.0.0      | 6.0 MB    | ############################################################################ | 100%
+m2w64-gmp-6.1.0      | 689 KB    | ############################################################################ | 100%
+gensim-3.8.0         | 18.3 MB   | ############################################################################ | 100%
+futures-3.3.0        | 29 KB     | ############################################################################ | 100%
+botocore-1.19.15     | 3.3 MB    | ############################################################################ | 100%
+vc-9                 | 3 KB      | ############################################################################ | 100%
+pyopenssl-19.1.0     | 48 KB     | ############################################################################ | 100%
+msys2-conda-epoch-20 | 2 KB      | ############################################################################ | 100%
+m2w64-gcc-libs-core- | 213 KB    | ############################################################################ | 100%
+pygpu-0.7.6          | 465 KB    | ############################################################################ | 100%
+openssl-1.1.1e       | 3.9 MB    | ############################################################################ | 100%
+numpy-base-1.16.6    | 3.2 MB    | ############################################################################ | 100%
+m2w64-gcc-libgfortra | 340 KB    | ############################################################################ | 100%
+bz2file-0.98         | 14 KB     | ############################################################################ | 100%
+cryptography-2.8     | 496 KB    | ############################################################################ | 100%
+boto-2.49.0          | 1.2 MB    | ############################################################################ | 100%
+python-2.7.18        | 15.5 MB   | ############################################################################ | 100%
+sqlite-3.30.1        | 588 KB    | ############################################################################ | 100%
+docutils-0.15.2      | 678 KB    | ############################################################################ | 100%
+libpython-2.1        | 38.9 MB   | ############################################################################ | 100%
+win_inet_pton-1.1.0  | 9 KB      | ############################################################################ | 100%
+pysocks-1.7.1        | 31 KB     | ############################################################################ | 100%
+setuptools-44.0.0    | 528 KB    | ############################################################################ | 100%
+pip-19.3.1           | 1.7 MB    | ############################################################################ | 100%
+s3transfer-0.3.0     | 100 KB    | ############################################################################ | 100%
+boto3-1.16.15        | 70 KB     | ############################################################################ | 100%
+mkl_fft-1.0.15       | 115 KB    | ############################################################################ | 100%
+theano-1.0.4         | 3.2 MB    | ############################################################################ | 100%
+intel-openmp-2020.2  | 1.6 MB    | ############################################################################ | 100%
+urllib3-1.25.7       | 170 KB    | ############################################################################ | 100%
+vs2008_runtime-9.00. | 500 KB    | ############################################################################ | 100%
+libgpuarray-0.7.6    | 243 KB    | ############################################################################ | 100%
+wheel-0.35.1         | 37 KB     | ############################################################################ | 100%
+chardet-3.0.4        | 189 KB    | ############################################################################ | 100%
+python-dateutil-2.8. | 215 KB    | ############################################################################ | 100%
+numpy-1.16.6         | 49 KB     | ############################################################################ | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use
+#
+#     $ conda activate srs2
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+
+(base) C:\dropbox\phD\sequence-based-recommendations>activate srs2
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>conda list scipy
+# packages in environment at c:\anaconda3\srs2:
+#
+# Name                    Version                   Build  Channel
+scipy                     1.2.1            py27h4c3ab11_0
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>conda list numpy
+# packages in environment at c:\anaconda3\srs2:
+#
+# Name                    Version                   Build  Channel
+numpy                     1.16.6           py27hcd21bde_0
+numpy-base                1.16.6           py27hb1d0314_0
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>python -c "import theano"
+Can not use cuDNN on context None: Disabled by dnn.enabled flag
+Mapped name None to device cuda: GeForce GTX 1050 Ti (0000:02:00.0)
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>python test.py -d ./ -m POP
+Can not use cuDNN on context None: Disabled by dnn.enabled flag
+Mapped name None to device cuda: GeForce GTX 1050 Ti (0000:02:00.0)
+Traceback (most recent call last):
+  File "test.py", line 6, in <module>
+    import lasagne
+ImportError: No module named lasagne
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>conda install lasagne
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - lasagne
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>conda install https://github.com/Lasagne/Lasagne/archive/master.zip
+Collecting package metadata (current_repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): done
+Solving environment: failed with initial frozen solve. Retrying with flexible solve.
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - //github.com/lasagne/lasagne/archive/master.zip
+
+Current channels:
+
+  - https://repo.anaconda.com/pkgs/main/win-64
+  - https://repo.anaconda.com/pkgs/main/noarch
+  - https://repo.anaconda.com/pkgs/r/win-64
+  - https://repo.anaconda.com/pkgs/r/noarch
+  - https://repo.anaconda.com/pkgs/msys2/win-64
+  - https://repo.anaconda.com/pkgs/msys2/noarch
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>pip install https://github.com/Lasagne/Lasagne/archive/master.zip
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting https://github.com/Lasagne/Lasagne/archive/master.zip
+  Using cached https://github.com/Lasagne/Lasagne/archive/master.zip
+Requirement already satisfied: numpy in c:\anaconda3\srs2\lib\site-packages (from Lasagne==0.2.dev1) (1.16.6)
+Building wheels for collected packages: Lasagne
+  Building wheel for Lasagne (setup.py) ... done
+  Created wheel for Lasagne: filename=Lasagne-0.2.dev1-cp27-none-any.whl size=122841 sha256=57db3e09d65ef4c1a1a532b8a56f4bc77b19b69de84138f70b68dd7f497558e8
+  Stored in directory: c:\tmp\pip-ephem-wheel-cache-kdrij5\wheels\ca\4a\00\87f1777b229481fe76562df7c0cfb993bc88ed0cc37e3f0ed4
+Successfully built Lasagne
+Installing collected packages: Lasagne
+Successfully installed Lasagne-0.2.dev1
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>python test.py -d ./ -m POP
+Can not use cuDNN on context None: Disabled by dnn.enabled flag
+Mapped name None to device cuda: GeForce GTX 1050 Ti (0000:02:00.0)
+Opening file (1)
+Timer:  0.0344678
+sps@10:  0.364896073903
+recall@10:  0.265987341391
+item_coverage@10:  20
+user_coverage@10:  0.743648960739
+blockbuster_share@10:  0.0226537216828
+-       0.364896073903  0.265987341391  20      0.743648960739  0.0226537216828
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>python test.py -d ./ -m MM
+Can not use cuDNN on context None: Disabled by dnn.enabled flag
+Mapped name None to device cuda: GeForce GTX 1050 Ti (0000:02:00.0)
+Opening file (1)
+Timer:  0.1077554
+sps@10:  0.678983833718
+recall@10:  0.536121916272
+item_coverage@10:  95
+user_coverage@10:  0.939953810624
+blockbuster_share@10:  0.0127774041695
+-       0.678983833718  0.536121916272  95      0.939953810624  0.0127774041695
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>python train.py -d ./
+Can not use cuDNN on context None: Disabled by dnn.enabled flag
+Mapped name None to device cuda: GeForce GTX 1050 Ti (0000:02:00.0)
+Compiling train...
+c:\anaconda3\srs2\lib\site-packages\theano\scan_module\scan_perform_ext.py:76: UserWarning: The file scan_perform.c is not available. This donot happen normally. You are probably in a strangesetup. This mean Theano can not use the cython code for scan. If youwant to remove this warning, use the Theano flag'cxx=' (set to an empty string) to disable all ccode generation.
+  "The file scan_perform.c is not available. This do"
+c:\anaconda3\srs2\lib\site-packages\theano\scan_module\scan_perform_ext.py:76: UserWarning: The file scan_perform.c is not available. This donot happen normally. You are probably in a strangesetup. This mean Theano can not use the cython code for scan. If youwant to remove this warning, use the Theano flag'cxx=' (set to an empty string) to disable all ccode generation.
+  "The file scan_perform.c is not available. This do"
+Compilation done.
+Compiling test...
+c:\anaconda3\srs2\lib\site-packages\theano\scan_module\scan_perform_ext.py:76: UserWarning: The file scan_perform.c is not available. This donot happen normally. You are probably in a strangesetup. This mean Theano can not use the cython code for scan. If youwant to remove this warning, use the Theano flag'cxx=' (set to an empty string) to disable all ccode generation.
+  "The file scan_perform.c is not available. This do"
+Compilation done.
+Opening file (1)
+Opening file (1)
+RNN with categorical cross entropy 2 batchs,  0.000533475593492  epochs in 2.07999992371 s
+Last train cost :  4.8291197
+recall :  0.0615815833439
+sps :  0.0437788018433
+Best  sps :  0.04377880184331797
+blockbuster_share :  0.0133333333333
+item_coverage :  53
+ndcg :  0.06041850640579134
+user_coverage :  0.359447004608
+-----------------
+2 0.000533475593492 2.08899998665 4.8291197 0.0615815833439 0.0437788018433 0.0133333333333 53 0.06041850640579134 0.359447004608
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.001_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 4 batchs,  0.00133368898373  epochs in 3.42199993134 s
+Last train cost :  4.8258395
+recall :  0.0722943824496
+sps :  0.0576036866359
+Best  sps :  0.0576036866359447
+blockbuster_share :  0.0160642570281
+item_coverage :  55
+ndcg :  0.06822528918948861
+user_coverage :  0.391705069124
+-----------------
+4 0.00133368898373 3.4359998703 4.8258395 0.0722943824496 0.0576036866359 0.0160642570281 55 0.06822528918948861 0.391705069124
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.001_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 8 batchs,  0.00400106695119  epochs in 4.77999997139 s
+Last train cost :  4.820617
+recall :  0.0855619593879
+sps :  0.0760368663594
+Best  sps :  0.07603686635944701
+blockbuster_share :  0.016339869281
+item_coverage :  53
+ndcg :  0.0823530457818004
+user_coverage :  0.435483870968
+-----------------
+8 0.00400106695119 4.78900003433 4.820617 0.0855619593879 0.0760368663594 0.016339869281 53 0.0823530457818004 0.435483870968
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.004_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Warning : Previous model could not be deleted
+Opening file (1)
+RNN with categorical cross entropy 16 batchs,  0.00746865830888  epochs in 6.25999999046 s
+Last train cost :  4.805463
+recall :  0.121626844963
+sps :  0.129032258065
+Best  sps :  0.12903225806451613
+blockbuster_share :  0.0162037037037
+item_coverage :  53
+ndcg :  0.1265976815577584
+user_coverage :  0.472350230415
+-----------------
+16 0.00746865830888 6.26900005341 4.805463 0.121626844963 0.129032258065 0.0162037037037 53 0.1265976815577584 0.472350230415
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.007_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 32 batchs,  0.0144038410243  epochs in 7.77999997139 s
+Last train cost :  4.8091784
+recall :  0.171182806719
+sps :  0.191244239631
+Best  sps :  0.1912442396313364
+blockbuster_share :  0.0197044334975
+item_coverage :  50
+ndcg :  0.18079284248624755
+user_coverage :  0.569124423963
+-----------------
+32 0.0144038410243 7.78900003433 4.8091784 0.171182806719 0.191244239631 0.0197044334975 50 0.18079284248624755 0.569124423963
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.014_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 64 batchs,  0.0248066150974  epochs in 9.44299983978 s
+Last train cost :  4.720111
+recall :  0.259869743258
+sps :  0.28801843318
+Best  sps :  0.2880184331797235
+blockbuster_share :  0.0258717660292
+item_coverage :  28
+ndcg :  0.25095770264800527
+user_coverage :  0.649769585253
+-----------------
+64 0.0248066150974 9.45199990273 4.720111 0.259869743258 0.28801843318 0.0258717660292 28 0.25095770264800527 0.649769585253
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.025_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 128 batchs,  0.0474793278208  epochs in 11.5460000038 s
+Last train cost :  4.3007374
+recall :  0.264308244164
+sps :  0.308755760369
+Best  sps :  0.3087557603686636
+blockbuster_share :  0.0261958997722
+item_coverage :  22
+ndcg :  0.2930373070569241
+user_coverage :  0.661290322581
+-----------------
+128 0.0474793278208 11.5569999218 4.3007374 0.264308244164 0.308755760369 0.0261958997722 22 0.2930373070569241 0.661290322581
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.047_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 256 batchs,  0.0992264603894  epochs in 14.5859999657 s
+Last train cost :  4.071718
+recall :  0.320946694905
+sps :  0.34331797235
+Best  sps :  0.3433179723502304
+blockbuster_share :  0.0272108843537
+item_coverage :  27
+ndcg :  0.3494250387634708
+user_coverage :  0.735023041475
+-----------------
+256 0.0992264603894 14.5969998837 4.071718 0.320946694905 0.34331797235 0.0272108843537 27 0.3494250387634708 0.735023041475
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.099_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 512 batchs,  0.198986396372  epochs in 19.5539999008 s
+Last train cost :  3.731991
+recall :  0.326135396071
+sps :  0.389400921659
+Best  sps :  0.38940092165898615
+blockbuster_share :  0.0259259259259
+item_coverage :  32
+ndcg :  0.3277064086740514
+user_coverage :  0.702764976959
+-----------------
+512 0.198986396372 19.5599999428 3.731991 0.326135396071 0.389400921659 0.0259259259259 32 0.3277064086740514 0.702764976959
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.199_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (1)
+RNN with categorical cross entropy 1024 batchs,  0.42784742598  epochs in 27.6989998817 s
+Last train cost :  3.339946
+recall :  0.434091329968
+sps :  0.513824884793
+Best  sps :  0.5138248847926268
+blockbuster_share :  0.0193826274228
+item_coverage :  58
+ndcg :  0.4607037701382586
+user_coverage :  0.778801843318
+-----------------
+1024 0.42784742598 27.7109999657 3.339946 0.434091329968 0.513824884793 0.0193826274228 58 0.4607037701382586 0.778801843318
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne0.428_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (2)
+Opening file (1)
+RNN with categorical cross entropy 2048 batchs,  1.09975993598  epochs in 42.4110000134 s
+Last train cost :  3.0545053
+recall :  0.542179630518
+sps :  0.633640552995
+Best  sps :  0.6336405529953917
+blockbuster_share :  0.0179833012203
+item_coverage :  73
+ndcg :  0.5436059746774781
+user_coverage :  0.889400921659
+-----------------
+2048 1.09975993598 42.4210000038 3.0545053 0.542179630518 0.633640552995 0.0179833012203 73 0.5436059746774781 0.889400921659
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne1.1_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (3)
+Opening file (1)
+RNN with categorical cross entropy 4096 batchs,  2.20005334756  epochs in 70.6909999847 s
+Last train cost :  2.8617847
+recall :  0.575400057008
+sps :  0.677419354839
+Best  sps :  0.6774193548387096
+blockbuster_share :  0.0176100628931
+item_coverage :  83
+ndcg :  0.5518976209077787
+user_coverage :  0.921658986175
+-----------------
+4096 2.20005334756 70.7000000477 2.8617847 0.575400057008 0.677419354839 0.0176100628931 83 0.5518976209077787 0.921658986175
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne2.2_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (4)
+Opening file (5)
+Opening file (1)
+RNN with categorical cross entropy 8192 batchs,  4.43104827954  epochs in 127.575000048 s
+Last train cost :  2.6907477
+recall :  0.615044184641
+sps :  0.732718894009
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0170835875534
+item_coverage :  87
+ndcg :  0.5961305461466934
+user_coverage :  0.960829493088
+-----------------
+8192 4.43104827954 127.585999966 2.6907477 0.615044184641 0.732718894009 0.0170835875534 87 0.5961305461466934 0.960829493088
+Save model in ./models/rnn_cce_db0.0_r0.0_ml30_bs16_ne4.431_GRU_gc100_h50_Ua_lr0.001_b10.9_b20.999_nt1_nf
+Opening file (6)
+Opening file (7)
+Opening file (8)
+Opening file (9)
+Opening file (10)
+Opening file (1)
+RNN with categorical cross entropy 16384 batchs,  9.10402774073  epochs in 238.530999899 s
+Last train cost :  2.4885669
+recall :  0.612333732275
+sps :  0.730414746544
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0169696969697
+item_coverage :  90
+ndcg :  0.6096457990511762
+user_coverage :  0.947004608295
+-----------------
+16384 9.10402774073 238.539999962 2.4885669 0.612333732275 0.730414746544 0.0169696969697 90 0.6096457990511762 0.947004608295
+Opening file (11)
+Opening file (12)
+Opening file (13)
+Opening file (14)
+Opening file (15)
+Opening file (16)
+Opening file (17)
+Opening file (18)
+Opening file (19)
+Opening file (1)
+RNN with categorical cross entropy 32768 batchs,  18.2088556949  epochs in 453.89199996 s
+Last train cost :  2.29065
+recall :  0.597092955725
+sps :  0.728110599078
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0175109443402
+item_coverage :  94
+ndcg :  0.5874571853877794
+user_coverage :  0.935483870968
+-----------------
+32768 18.2088556949 453.899999857 2.29065 0.597092955725 0.728110599078 0.0175109443402 94 0.5874571853877794 0.935483870968
+Opening file (20)
+Opening file (21)
+Opening file (22)
+Opening file (23)
+Opening file (24)
+Opening file (25)
+Opening file (26)
+Opening file (27)
+Opening file (28)
+Opening file (29)
+Opening file (30)
+Opening file (31)
+Opening file (32)
+Opening file (33)
+Opening file (34)
+Opening file (35)
+Opening file (36)
+Opening file (37)
+Opening file (1)
+RNN with categorical cross entropy 65536 batchs,  36.4451853828  epochs in 880.165999889 s
+Last train cost :  2.1037364
+recall :  0.599843420149
+sps :  0.728110599078
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0173482032218
+item_coverage :  95
+ndcg :  0.6049850560538829
+user_coverage :  0.940092165899
+-----------------
+65536 36.4451853828 880.17599988 2.1037364 0.599843420149 0.728110599078 0.0173482032218 95 0.6049850560538829 0.940092165899
+Opening file (38)
+Opening file (39)
+Opening file (40)
+Opening file (41)
+Opening file (42)
+Opening file (43)
+Opening file (44)
+Opening file (45)
+Opening file (46)
+Opening file (47)
+Opening file (48)
+Opening file (49)
+Opening file (50)
+Opening file (51)
+Opening file (52)
+Opening file (53)
+Opening file (54)
+Opening file (55)
+Opening file (56)
+Opening file (57)
+Opening file (58)
+Opening file (59)
+Opening file (60)
+Opening file (61)
+Opening file (62)
+Opening file (63)
+Opening file (64)
+Opening file (65)
+Opening file (66)
+Opening file (67)
+Opening file (68)
+Opening file (69)
+Opening file (70)
+Opening file (71)
+Opening file (72)
+Opening file (73)
+Opening file (74)
+Opening file (1)
+RNN with categorical cross entropy 131072 batchs,  73.1307015204  epochs in 1814.92599988 s
+Last train cost :  1.9200459
+recall :  0.58183923167
+sps :  0.714285714286
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.017971758665
+item_coverage :  97
+ndcg :  0.5907346887440258
+user_coverage :  0.926267281106
+-----------------
+131072 73.1307015204 1814.93400002 1.9200459 0.58183923167 0.714285714286 0.017971758665 97 0.5907346887440258 0.926267281106
+Opening file (75)
+Opening file (76)
+Opening file (77)
+Opening file (78)
+Opening file (79)
+Opening file (80)
+Opening file (81)
+Opening file (82)
+Opening file (83)
+Opening file (84)
+Opening file (85)
+Opening file (86)
+Opening file (87)
+Opening file (88)
+Opening file (89)
+Opening file (90)
+Opening file (91)
+Opening file (92)
+Opening file (93)
+Opening file (94)
+Opening file (95)
+Opening file (96)
+Opening file (97)
+Opening file (98)
+Opening file (99)
+Opening file (100)
+Opening file (101)
+Opening file (102)
+Opening file (103)
+Opening file (104)
+Opening file (105)
+Opening file (106)
+Opening file (107)
+Opening file (108)
+Opening file (109)
+Opening file (110)
+Opening file (111)
+Opening file (112)
+Opening file (113)
+Opening file (114)
+Opening file (115)
+Opening file (116)
+Opening file (117)
+Opening file (118)
+Opening file (119)
+Opening file (120)
+Opening file (121)
+Opening file (122)
+Opening file (123)
+Opening file (124)
+Opening file (125)
+Opening file (126)
+Opening file (127)
+Opening file (128)
+Opening file (129)
+Opening file (130)
+Opening file (131)
+Opening file (132)
+Opening file (133)
+Opening file (134)
+Opening file (135)
+Opening file (136)
+Opening file (137)
+Opening file (138)
+Opening file (139)
+Opening file (140)
+Opening file (141)
+Opening file (142)
+Opening file (143)
+Opening file (144)
+Opening file (145)
+Opening file (146)
+Opening file (147)
+Opening file (1)
+RNN with categorical cross entropy 262144 batchs,  146.264870632  epochs in 3622.9849999 s
+Last train cost :  1.7704569
+recall :  0.565284058394
+sps :  0.702764976959
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0185799601858
+item_coverage :  96
+ndcg :  0.5631961393311059
+user_coverage :  0.928571428571
+-----------------
+262144 146.264870632 3622.99399996 1.7704569 0.565284058394 0.702764976959 0.0185799601858 96 0.5631961393311059 0.928571428571
+Opening file (148)
+Opening file (149)
+Opening file (150)
+Opening file (151)
+Opening file (152)
+Opening file (153)
+Opening file (154)
+Opening file (155)
+Opening file (156)
+Opening file (157)
+Opening file (158)
+Opening file (159)
+Opening file (160)
+Opening file (161)
+Opening file (162)
+Opening file (163)
+Opening file (164)
+Opening file (165)
+Opening file (166)
+Opening file (167)
+Opening file (168)
+Opening file (169)
+Opening file (170)
+Opening file (171)
+Opening file (172)
+Opening file (173)
+Opening file (174)
+Opening file (175)
+Opening file (176)
+Opening file (177)
+Opening file (178)
+Opening file (179)
+Opening file (180)
+Opening file (181)
+Opening file (182)
+Opening file (183)
+Opening file (184)
+Opening file (185)
+Opening file (186)
+Opening file (187)
+Opening file (188)
+Opening file (189)
+Opening file (190)
+Opening file (191)
+Opening file (192)
+Opening file (193)
+Opening file (194)
+Opening file (195)
+Opening file (196)
+Opening file (197)
+Opening file (198)
+Opening file (199)
+Opening file (200)
+Opening file (201)
+Opening file (202)
+Opening file (203)
+Opening file (204)
+Opening file (205)
+Opening file (206)
+Opening file (207)
+Opening file (208)
+Opening file (209)
+Opening file (210)
+Opening file (211)
+Opening file (212)
+Opening file (213)
+Opening file (214)
+Opening file (215)
+Opening file (216)
+Opening file (217)
+Opening file (218)
+Opening file (219)
+Opening file (220)
+Opening file (221)
+Opening file (222)
+Opening file (223)
+Opening file (224)
+Opening file (225)
+Opening file (226)
+Opening file (227)
+Opening file (228)
+Opening file (229)
+Opening file (230)
+Opening file (231)
+Opening file (232)
+Opening file (233)
+Opening file (234)
+Opening file (235)
+Opening file (236)
+Opening file (237)
+Opening file (238)
+Opening file (239)
+Opening file (240)
+Opening file (241)
+Opening file (242)
+Opening file (243)
+Opening file (244)
+Opening file (245)
+Opening file (246)
+Opening file (247)
+Opening file (248)
+Opening file (249)
+Opening file (250)
+Opening file (251)
+Opening file (252)
+Opening file (253)
+Opening file (254)
+Opening file (255)
+Opening file (256)
+Opening file (257)
+Opening file (258)
+Opening file (259)
+Opening file (260)
+Opening file (261)
+Opening file (262)
+Opening file (263)
+Opening file (264)
+Opening file (265)
+Opening file (266)
+Opening file (267)
+Opening file (268)
+Opening file (269)
+Opening file (270)
+Opening file (271)
+Opening file (272)
+Opening file (273)
+Opening file (274)
+Opening file (275)
+Opening file (276)
+Opening file (277)
+Opening file (278)
+Opening file (279)
+Opening file (280)
+Opening file (281)
+Opening file (282)
+Opening file (283)
+Opening file (284)
+Opening file (285)
+Opening file (286)
+Opening file (287)
+Opening file (288)
+Opening file (289)
+Opening file (290)
+Opening file (291)
+Opening file (292)
+Opening file (293)
+Opening file (1)
+RNN with categorical cross entropy 524288 batchs,  292.583889037  epochs in 7142.48899984 s
+Last train cost :  1.6737397
+recall :  0.554784375966
+sps :  0.693548387097
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0188679245283
+item_coverage :  96
+ndcg :  0.5513272474298487
+user_coverage :  0.921658986175
+-----------------
+524288 292.583889037 7142.49799991 1.6737397 0.554784375966 0.693548387097 0.0188679245283 96 0.5513272474298487 0.921658986175
+Opening file (294)
+Opening file (295)
+Opening file (296)
+Opening file (297)
+Opening file (298)
+Opening file (299)
+Opening file (300)
+Opening file (301)
+Opening file (302)
+Opening file (303)
+Opening file (304)
+Opening file (305)
+Opening file (306)
+Opening file (307)
+Opening file (308)
+Opening file (309)
+Opening file (310)
+Opening file (311)
+Opening file (312)
+Opening file (313)
+Opening file (314)
+Opening file (315)
+Opening file (316)
+Opening file (317)
+Opening file (318)
+Opening file (319)
+Opening file (320)
+Opening file (321)
+Opening file (322)
+Opening file (323)
+Opening file (324)
+Opening file (325)
+Opening file (326)
+Opening file (327)
+Opening file (328)
+Opening file (329)
+Opening file (330)
+Opening file (331)
+Opening file (332)
+Opening file (333)
+Opening file (334)
+Opening file (335)
+Opening file (336)
+Opening file (337)
+Opening file (338)
+Opening file (339)
+Opening file (340)
+Opening file (341)
+Opening file (342)
+Opening file (343)
+Opening file (344)
+Opening file (345)
+Opening file (346)
+Opening file (347)
+Opening file (348)
+Opening file (349)
+Opening file (350)
+Opening file (351)
+Opening file (352)
+Opening file (353)
+Opening file (354)
+Opening file (355)
+Opening file (356)
+Opening file (357)
+Opening file (358)
+Opening file (359)
+Opening file (360)
+Opening file (361)
+Opening file (362)
+Opening file (363)
+Opening file (364)
+Opening file (365)
+Opening file (366)
+Opening file (367)
+Opening file (368)
+Opening file (369)
+Opening file (370)
+Opening file (371)
+Opening file (372)
+Opening file (373)
+Opening file (374)
+Opening file (375)
+Opening file (376)
+Opening file (377)
+Opening file (378)
+Opening file (379)
+Opening file (380)
+Opening file (381)
+Opening file (382)
+Opening file (383)
+Opening file (384)
+Opening file (385)
+Opening file (386)
+Opening file (387)
+Opening file (388)
+Opening file (389)
+Opening file (390)
+Opening file (391)
+Opening file (392)
+Opening file (393)
+Opening file (394)
+Opening file (395)
+Opening file (396)
+Opening file (397)
+Opening file (398)
+Opening file (399)
+Opening file (400)
+Opening file (401)
+Opening file (402)
+Opening file (403)
+Opening file (404)
+Opening file (405)
+Opening file (406)
+Opening file (407)
+Opening file (408)
+Opening file (409)
+Opening file (410)
+Opening file (411)
+Opening file (412)
+Opening file (413)
+Opening file (414)
+Opening file (415)
+Opening file (416)
+Opening file (417)
+Opening file (418)
+Opening file (419)
+Opening file (420)
+Opening file (421)
+Opening file (422)
+Opening file (423)
+Opening file (424)
+Opening file (425)
+Opening file (426)
+Opening file (427)
+Opening file (428)
+Opening file (429)
+Opening file (430)
+Opening file (431)
+Opening file (432)
+Opening file (433)
+Opening file (434)
+Opening file (435)
+Opening file (436)
+Opening file (437)
+Opening file (438)
+Opening file (439)
+Opening file (440)
+Opening file (441)
+Opening file (442)
+Opening file (443)
+Opening file (444)
+Opening file (445)
+Opening file (446)
+Opening file (447)
+Opening file (448)
+Opening file (449)
+Opening file (450)
+Opening file (451)
+Opening file (452)
+Opening file (453)
+Opening file (454)
+Opening file (455)
+Opening file (456)
+Opening file (457)
+Opening file (458)
+Opening file (459)
+Opening file (460)
+Opening file (461)
+Opening file (462)
+Opening file (463)
+Opening file (464)
+Opening file (465)
+Opening file (466)
+Opening file (467)
+Opening file (468)
+Opening file (469)
+Opening file (470)
+Opening file (471)
+Opening file (472)
+Opening file (473)
+Opening file (474)
+Opening file (475)
+Opening file (476)
+Opening file (477)
+Opening file (478)
+Opening file (479)
+Opening file (480)
+Opening file (481)
+Opening file (482)
+Opening file (483)
+Opening file (484)
+Opening file (485)
+Opening file (486)
+Opening file (487)
+Opening file (488)
+Opening file (489)
+Opening file (490)
+Opening file (491)
+Opening file (492)
+Opening file (493)
+Opening file (494)
+Opening file (495)
+Opening file (496)
+Opening file (497)
+Opening file (498)
+Opening file (499)
+Opening file (500)
+Opening file (501)
+Opening file (502)
+Opening file (503)
+Opening file (504)
+Opening file (505)
+Opening file (506)
+Opening file (507)
+Opening file (508)
+Opening file (509)
+Opening file (510)
+Opening file (511)
+Opening file (512)
+Opening file (513)
+Opening file (514)
+Opening file (515)
+Opening file (516)
+Opening file (517)
+Opening file (518)
+Opening file (519)
+Opening file (520)
+Opening file (521)
+Opening file (522)
+Opening file (523)
+Opening file (524)
+Opening file (525)
+Opening file (526)
+Opening file (527)
+Opening file (528)
+Opening file (529)
+Opening file (530)
+Opening file (531)
+Opening file (532)
+Opening file (533)
+Opening file (534)
+Opening file (535)
+Opening file (536)
+Opening file (537)
+Opening file (538)
+Opening file (539)
+Opening file (540)
+Opening file (541)
+Opening file (542)
+Opening file (543)
+Opening file (544)
+Opening file (545)
+Opening file (546)
+Opening file (547)
+Opening file (548)
+Opening file (549)
+Opening file (550)
+Opening file (551)
+Opening file (552)
+Opening file (553)
+Opening file (554)
+Opening file (555)
+Opening file (556)
+Opening file (557)
+Opening file (558)
+Opening file (559)
+Opening file (560)
+Opening file (561)
+Opening file (562)
+Opening file (563)
+Opening file (564)
+Opening file (565)
+Opening file (566)
+Opening file (567)
+Opening file (568)
+Opening file (569)
+Opening file (570)
+Opening file (571)
+Opening file (572)
+Opening file (573)
+Opening file (574)
+Opening file (575)
+Opening file (576)
+Opening file (577)
+Opening file (578)
+Opening file (579)
+Opening file (580)
+Opening file (581)
+Opening file (582)
+Opening file (583)
+Opening file (584)
+Opening file (585)
+Opening file (586)
+Opening file (1)
+RNN with categorical cross entropy 1048576 batchs,  585.345692185  epochs in 13987.3639998 s
+Last train cost :  1.6127384
+recall :  0.546558360166
+sps :  0.700460829493
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0191256830601
+item_coverage :  93
+ndcg :  0.5405815826687593
+user_coverage :  0.910138248848
+-----------------
+1048576 585.345692185 13987.3729999 1.6127384 0.546558360166 0.700460829493 0.0191256830601 93 0.5405815826687593 0.910138248848
+Opening file (587)
+Opening file (588)
+Opening file (589)
+Opening file (590)
+Opening file (591)
+Opening file (592)
+Opening file (593)
+Opening file (594)
+Opening file (595)
+Opening file (596)
+Opening file (597)
+Opening file (598)
+Opening file (599)
+Opening file (600)
+Opening file (601)
+Opening file (602)
+Opening file (603)
+Opening file (604)
+Opening file (605)
+Opening file (606)
+Opening file (607)
+Opening file (608)
+Opening file (609)
+Opening file (610)
+Opening file (611)
+Opening file (612)
+Opening file (613)
+Opening file (614)
+Opening file (615)
+Opening file (616)
+Opening file (617)
+Opening file (618)
+Opening file (619)
+Opening file (620)
+Opening file (621)
+Opening file (622)
+Opening file (623)
+Opening file (624)
+Opening file (625)
+Opening file (626)
+Opening file (627)
+Opening file (628)
+Opening file (629)
+Opening file (630)
+Opening file (631)
+Opening file (632)
+Opening file (633)
+Opening file (634)
+Opening file (635)
+Opening file (636)
+Opening file (637)
+Opening file (638)
+Opening file (639)
+Opening file (640)
+Opening file (641)
+Opening file (642)
+Opening file (643)
+Opening file (644)
+Opening file (645)
+Opening file (646)
+Opening file (647)
+Opening file (648)
+Opening file (649)
+Opening file (650)
+Opening file (651)
+Opening file (652)
+Opening file (653)
+Opening file (654)
+Opening file (655)
+Opening file (656)
+Opening file (657)
+Opening file (658)
+Opening file (659)
+Opening file (660)
+Opening file (661)
+Opening file (662)
+Opening file (663)
+Opening file (664)
+Opening file (665)
+Opening file (666)
+Opening file (667)
+Opening file (668)
+Opening file (669)
+Opening file (670)
+Opening file (671)
+Opening file (672)
+Opening file (673)
+Opening file (674)
+Opening file (675)
+Opening file (676)
+Opening file (677)
+Opening file (678)
+Opening file (679)
+Opening file (680)
+Opening file (681)
+Opening file (682)
+Opening file (683)
+Opening file (684)
+Opening file (685)
+Opening file (686)
+Opening file (687)
+Opening file (688)
+Opening file (689)
+Opening file (690)
+Opening file (691)
+Opening file (692)
+Opening file (693)
+Opening file (694)
+Opening file (695)
+Opening file (696)
+Opening file (697)
+Opening file (698)
+Opening file (699)
+Opening file (700)
+Opening file (701)
+Opening file (702)
+Opening file (703)
+Opening file (704)
+Opening file (705)
+Opening file (706)
+Opening file (707)
+Opening file (708)
+Opening file (709)
+Opening file (710)
+Opening file (711)
+Opening file (712)
+Opening file (713)
+Opening file (714)
+Opening file (715)
+Opening file (716)
+Opening file (717)
+Opening file (718)
+Opening file (719)
+Opening file (720)
+Opening file (721)
+Opening file (722)
+Opening file (723)
+Opening file (724)
+Opening file (725)
+Opening file (726)
+Opening file (727)
+Opening file (728)
+Opening file (729)
+Opening file (730)
+Opening file (731)
+Opening file (732)
+Opening file (733)
+Opening file (734)
+Opening file (735)
+Opening file (736)
+Opening file (737)
+Opening file (738)
+Opening file (739)
+Opening file (740)
+Opening file (741)
+Opening file (742)
+Opening file (743)
+Opening file (744)
+Opening file (745)
+Opening file (746)
+Opening file (747)
+Opening file (748)
+Opening file (749)
+Opening file (750)
+Opening file (751)
+Opening file (752)
+Opening file (753)
+Opening file (754)
+Opening file (755)
+Opening file (756)
+Opening file (757)
+Opening file (758)
+Opening file (759)
+Opening file (760)
+Opening file (761)
+Opening file (762)
+Opening file (763)
+Opening file (764)
+Opening file (765)
+Opening file (766)
+Opening file (767)
+Opening file (768)
+Opening file (769)
+Opening file (770)
+Opening file (771)
+Opening file (772)
+Opening file (773)
+Opening file (774)
+Opening file (775)
+Opening file (776)
+Opening file (777)
+Opening file (778)
+Opening file (779)
+Opening file (780)
+Opening file (781)
+Opening file (782)
+Opening file (783)
+Opening file (784)
+Opening file (785)
+Opening file (786)
+Opening file (787)
+Opening file (788)
+Opening file (789)
+Opening file (790)
+Opening file (791)
+Opening file (792)
+Opening file (793)
+Opening file (794)
+Opening file (795)
+Opening file (796)
+Opening file (797)
+Opening file (798)
+Opening file (799)
+Opening file (800)
+Opening file (801)
+Opening file (802)
+Opening file (803)
+Opening file (804)
+Opening file (805)
+Opening file (806)
+Opening file (807)
+Opening file (808)
+Opening file (809)
+Opening file (810)
+Opening file (811)
+Opening file (812)
+Opening file (813)
+Opening file (814)
+Opening file (815)
+Opening file (816)
+Opening file (817)
+Opening file (818)
+Opening file (819)
+Opening file (820)
+Opening file (821)
+Opening file (822)
+Opening file (823)
+Opening file (824)
+Opening file (825)
+Opening file (826)
+Opening file (827)
+Opening file (828)
+Opening file (829)
+Opening file (830)
+Opening file (831)
+Opening file (832)
+Opening file (833)
+Opening file (834)
+Opening file (835)
+Opening file (836)
+Opening file (837)
+Opening file (838)
+Opening file (839)
+Opening file (840)
+Opening file (841)
+Opening file (842)
+Opening file (843)
+Opening file (844)
+Opening file (845)
+Opening file (846)
+Opening file (847)
+Opening file (848)
+Opening file (849)
+Opening file (850)
+Opening file (851)
+Opening file (852)
+Opening file (853)
+Opening file (854)
+Opening file (855)
+Opening file (856)
+Opening file (857)
+Opening file (858)
+Opening file (859)
+Opening file (860)
+Opening file (861)
+Opening file (862)
+Opening file (863)
+Opening file (864)
+Opening file (865)
+Opening file (866)
+Opening file (867)
+Opening file (868)
+Opening file (869)
+Opening file (870)
+Opening file (871)
+Opening file (872)
+Opening file (873)
+Opening file (874)
+Opening file (875)
+Opening file (876)
+Opening file (877)
+Opening file (878)
+Opening file (879)
+Opening file (880)
+Opening file (881)
+Opening file (882)
+Opening file (883)
+Opening file (884)
+Opening file (885)
+Opening file (886)
+Opening file (887)
+Opening file (888)
+Opening file (889)
+Opening file (890)
+Opening file (891)
+Opening file (892)
+Opening file (893)
+Opening file (894)
+Opening file (895)
+Opening file (896)
+Opening file (897)
+Opening file (898)
+Opening file (899)
+Opening file (900)
+Opening file (901)
+Opening file (902)
+Opening file (903)
+Opening file (904)
+Opening file (905)
+Opening file (906)
+Opening file (907)
+Opening file (908)
+Opening file (909)
+Opening file (910)
+Opening file (911)
+Opening file (912)
+Opening file (913)
+Opening file (914)
+Opening file (915)
+Opening file (916)
+Opening file (917)
+Opening file (918)
+Opening file (919)
+Opening file (920)
+Opening file (921)
+Opening file (922)
+Opening file (923)
+Opening file (924)
+Opening file (925)
+Opening file (926)
+Opening file (927)
+Opening file (928)
+Opening file (929)
+Opening file (930)
+Opening file (931)
+Opening file (932)
+Opening file (933)
+Opening file (934)
+Opening file (935)
+Opening file (936)
+Opening file (937)
+Opening file (938)
+Opening file (939)
+Opening file (940)
+Opening file (941)
+Opening file (942)
+Opening file (943)
+Opening file (944)
+Opening file (945)
+Opening file (946)
+Opening file (947)
+Opening file (948)
+Opening file (949)
+Opening file (950)
+Opening file (951)
+Opening file (952)
+Opening file (953)
+Opening file (954)
+Opening file (955)
+Opening file (956)
+Opening file (957)
+Opening file (958)
+Opening file (959)
+Opening file (960)
+Opening file (961)
+Opening file (962)
+Opening file (963)
+Opening file (964)
+Opening file (965)
+Opening file (966)
+Opening file (967)
+Opening file (968)
+Opening file (969)
+Opening file (970)
+Opening file (971)
+Opening file (972)
+Opening file (973)
+Opening file (974)
+Opening file (975)
+Opening file (976)
+Opening file (977)
+Opening file (978)
+Opening file (979)
+Opening file (980)
+Opening file (981)
+Opening file (982)
+Opening file (983)
+Opening file (984)
+Opening file (985)
+Opening file (986)
+Opening file (987)
+Opening file (988)
+Opening file (989)
+Opening file (990)
+Opening file (991)
+Opening file (992)
+Opening file (993)
+Opening file (994)
+Opening file (995)
+Opening file (996)
+Opening file (997)
+Opening file (998)
+Opening file (999)
+Opening file (1000)
+Opening file (1001)
+Opening file (1002)
+Opening file (1003)
+Opening file (1004)
+Opening file (1005)
+Opening file (1006)
+Opening file (1007)
+Opening file (1008)
+Opening file (1009)
+Opening file (1010)
+Opening file (1011)
+Opening file (1012)
+Opening file (1013)
+Opening file (1014)
+Opening file (1015)
+Opening file (1016)
+Opening file (1017)
+Opening file (1018)
+Opening file (1019)
+Opening file (1020)
+Opening file (1021)
+Opening file (1022)
+Opening file (1023)
+Opening file (1024)
+Opening file (1025)
+Opening file (1026)
+Opening file (1027)
+Opening file (1028)
+Opening file (1029)
+Opening file (1030)
+Opening file (1031)
+Opening file (1032)
+Opening file (1033)
+Opening file (1034)
+Opening file (1035)
+Opening file (1036)
+Opening file (1037)
+Opening file (1038)
+Opening file (1039)
+Opening file (1040)
+Opening file (1041)
+Opening file (1042)
+Opening file (1043)
+Opening file (1044)
+Opening file (1045)
+Opening file (1046)
+Opening file (1047)
+Opening file (1048)
+Opening file (1049)
+Opening file (1050)
+Opening file (1051)
+Opening file (1052)
+Opening file (1053)
+Opening file (1054)
+Opening file (1055)
+Opening file (1056)
+Opening file (1057)
+Opening file (1058)
+Opening file (1059)
+Opening file (1060)
+Opening file (1061)
+Opening file (1062)
+Opening file (1063)
+Opening file (1064)
+Opening file (1065)
+Opening file (1066)
+Opening file (1067)
+Opening file (1068)
+Opening file (1069)
+Opening file (1070)
+Opening file (1071)
+Opening file (1072)
+Opening file (1073)
+Opening file (1074)
+Opening file (1075)
+Opening file (1076)
+Opening file (1077)
+Opening file (1078)
+Opening file (1079)
+Opening file (1080)
+Opening file (1081)
+Opening file (1082)
+Opening file (1083)
+Opening file (1084)
+Opening file (1085)
+Opening file (1086)
+Opening file (1087)
+Opening file (1088)
+Opening file (1089)
+Opening file (1090)
+Opening file (1091)
+Opening file (1092)
+Opening file (1093)
+Opening file (1094)
+Opening file (1095)
+Opening file (1096)
+Opening file (1097)
+Opening file (1098)
+Opening file (1099)
+Opening file (1100)
+Opening file (1101)
+Opening file (1102)
+Opening file (1103)
+Opening file (1104)
+Opening file (1105)
+Opening file (1106)
+Opening file (1107)
+Opening file (1108)
+Opening file (1109)
+Opening file (1110)
+Opening file (1111)
+Opening file (1112)
+Opening file (1113)
+Opening file (1114)
+Opening file (1115)
+Opening file (1116)
+Opening file (1117)
+Opening file (1118)
+Opening file (1119)
+Opening file (1120)
+Opening file (1121)
+Opening file (1122)
+Opening file (1123)
+Opening file (1124)
+Opening file (1125)
+Opening file (1126)
+Opening file (1127)
+Opening file (1128)
+Opening file (1129)
+Opening file (1130)
+Opening file (1131)
+Opening file (1132)
+Opening file (1133)
+Opening file (1134)
+Opening file (1135)
+Opening file (1136)
+Opening file (1137)
+Opening file (1138)
+Opening file (1139)
+Opening file (1140)
+Opening file (1141)
+Opening file (1142)
+Opening file (1143)
+Opening file (1144)
+Opening file (1145)
+Opening file (1146)
+Opening file (1147)
+Opening file (1148)
+Opening file (1149)
+Opening file (1150)
+Opening file (1151)
+Opening file (1152)
+Opening file (1153)
+Opening file (1154)
+Opening file (1155)
+Opening file (1156)
+Opening file (1157)
+Opening file (1158)
+Opening file (1159)
+Opening file (1160)
+Opening file (1161)
+Opening file (1162)
+Opening file (1163)
+Opening file (1164)
+Opening file (1165)
+Opening file (1166)
+Opening file (1167)
+Opening file (1168)
+Opening file (1169)
+Opening file (1170)
+Opening file (1171)
+Opening file (1)
+RNN with categorical cross entropy 2097152 batchs,  1170.84875967  epochs in 29782.885 s
+Last train cost :  1.5789653
+recall :  0.538991228118
+sps :  0.677419354839
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0191780821918
+item_coverage :  89
+ndcg :  0.5466049376635495
+user_coverage :  0.903225806452
+-----------------
+2097152 1170.84875967 29782.895 1.5789653 0.538991228118 0.677419354839 0.0191780821918 89 0.5466049376635495 0.903225806452
+Opening file (1172)
+Opening file (1173)
+Opening file (1174)
+Opening file (1175)
+Opening file (1176)
+Opening file (1177)
+Opening file (1178)
+Opening file (1179)
+Opening file (1180)
+Opening file (1181)
+Opening file (1182)
+Opening file (1183)
+Opening file (1184)
+Opening file (1185)
+Opening file (1186)
+Opening file (1187)
+Opening file (1188)
+Opening file (1189)
+Opening file (1190)
+Opening file (1191)
+Opening file (1192)
+Opening file (1193)
+Opening file (1194)
+Opening file (1195)
+Opening file (1196)
+Opening file (1197)
+Opening file (1198)
+Opening file (1199)
+Opening file (1200)
+Opening file (1201)
+Opening file (1202)
+Opening file (1203)
+Opening file (1204)
+Opening file (1205)
+Opening file (1206)
+Opening file (1207)
+Opening file (1208)
+Opening file (1209)
+Opening file (1210)
+Opening file (1211)
+Opening file (1212)
+Opening file (1213)
+Opening file (1214)
+Opening file (1215)
+Opening file (1216)
+Opening file (1217)
+Opening file (1218)
+Opening file (1219)
+Opening file (1220)
+Opening file (1221)
+Opening file (1222)
+Opening file (1223)
+Opening file (1224)
+Opening file (1225)
+Opening file (1226)
+Opening file (1227)
+Opening file (1228)
+Opening file (1229)
+Opening file (1230)
+Opening file (1231)
+Opening file (1232)
+Opening file (1233)
+Opening file (1234)
+Opening file (1235)
+Opening file (1236)
+Opening file (1237)
+Opening file (1238)
+Opening file (1239)
+Opening file (1240)
+Opening file (1241)
+Opening file (1242)
+Opening file (1243)
+Opening file (1244)
+Opening file (1245)
+Opening file (1246)
+Opening file (1247)
+Opening file (1248)
+Opening file (1249)
+Opening file (1250)
+Opening file (1251)
+Opening file (1252)
+Opening file (1253)
+Opening file (1254)
+Opening file (1255)
+Opening file (1256)
+Opening file (1257)
+Opening file (1258)
+Opening file (1259)
+Opening file (1260)
+Opening file (1261)
+Opening file (1262)
+Opening file (1263)
+Opening file (1264)
+Opening file (1265)
+Opening file (1266)
+Opening file (1267)
+Opening file (1268)
+Opening file (1269)
+Opening file (1270)
+Opening file (1271)
+Opening file (1272)
+Opening file (1273)
+Opening file (1274)
+Opening file (1275)
+Opening file (1276)
+Opening file (1277)
+Opening file (1278)
+Opening file (1279)
+Opening file (1280)
+Opening file (1281)
+Opening file (1282)
+Opening file (1283)
+Opening file (1284)
+Opening file (1285)
+Opening file (1286)
+Opening file (1287)
+Opening file (1288)
+Opening file (1289)
+Opening file (1290)
+Opening file (1291)
+Opening file (1292)
+Opening file (1293)
+Opening file (1294)
+Opening file (1295)
+Opening file (1296)
+Opening file (1297)
+Opening file (1298)
+Opening file (1299)
+Opening file (1300)
+Opening file (1301)
+Opening file (1302)
+Opening file (1303)
+Opening file (1304)
+Opening file (1305)
+Opening file (1306)
+Opening file (1307)
+Opening file (1308)
+Opening file (1309)
+Opening file (1310)
+Opening file (1311)
+Opening file (1312)
+Opening file (1313)
+Opening file (1314)
+Opening file (1315)
+Opening file (1316)
+Opening file (1317)
+Opening file (1318)
+Opening file (1319)
+Opening file (1320)
+Opening file (1321)
+Opening file (1322)
+Opening file (1323)
+Opening file (1324)
+Opening file (1325)
+Opening file (1326)
+Opening file (1327)
+Opening file (1328)
+Opening file (1329)
+Opening file (1330)
+Opening file (1331)
+Opening file (1332)
+Opening file (1333)
+Opening file (1334)
+Opening file (1335)
+Opening file (1336)
+Opening file (1337)
+Opening file (1338)
+Opening file (1339)
+Opening file (1340)
+Opening file (1341)
+Opening file (1342)
+Opening file (1343)
+Opening file (1344)
+Opening file (1345)
+Opening file (1346)
+Opening file (1347)
+Opening file (1348)
+Opening file (1349)
+Opening file (1350)
+Opening file (1351)
+Opening file (1352)
+Opening file (1353)
+Opening file (1354)
+Opening file (1355)
+Opening file (1356)
+Opening file (1357)
+Opening file (1358)
+Opening file (1359)
+Opening file (1360)
+Opening file (1361)
+Opening file (1362)
+Opening file (1363)
+Opening file (1364)
+Opening file (1365)
+Opening file (1366)
+Opening file (1367)
+Opening file (1368)
+Opening file (1369)
+Opening file (1370)
+Opening file (1371)
+Opening file (1372)
+Opening file (1373)
+Opening file (1374)
+Opening file (1375)
+Opening file (1376)
+Opening file (1377)
+Opening file (1378)
+Opening file (1379)
+Opening file (1380)
+Opening file (1381)
+Opening file (1382)
+Opening file (1383)
+Opening file (1384)
+Opening file (1385)
+Opening file (1386)
+Opening file (1387)
+Opening file (1388)
+Opening file (1389)
+Opening file (1390)
+Opening file (1391)
+Opening file (1392)
+Opening file (1393)
+Opening file (1394)
+Opening file (1395)
+Opening file (1396)
+Opening file (1397)
+Opening file (1398)
+Opening file (1399)
+Opening file (1400)
+Opening file (1401)
+Opening file (1402)
+Opening file (1403)
+Opening file (1404)
+Opening file (1405)
+Opening file (1406)
+Opening file (1407)
+Opening file (1408)
+Opening file (1409)
+Opening file (1410)
+Opening file (1411)
+Opening file (1412)
+Opening file (1413)
+Opening file (1414)
+Opening file (1415)
+Opening file (1416)
+Opening file (1417)
+Opening file (1418)
+Opening file (1419)
+Opening file (1420)
+Opening file (1421)
+Opening file (1422)
+Opening file (1423)
+Opening file (1424)
+Opening file (1425)
+Opening file (1426)
+Opening file (1427)
+Opening file (1428)
+Opening file (1429)
+Opening file (1430)
+Opening file (1431)
+Opening file (1432)
+Opening file (1433)
+Opening file (1434)
+Opening file (1435)
+Opening file (1436)
+Opening file (1437)
+Opening file (1438)
+Opening file (1439)
+Opening file (1440)
+Opening file (1441)
+Opening file (1442)
+Opening file (1443)
+Opening file (1444)
+Opening file (1445)
+Opening file (1446)
+Opening file (1447)
+Opening file (1448)
+Opening file (1449)
+Opening file (1450)
+Opening file (1451)
+Opening file (1452)
+Opening file (1453)
+Opening file (1454)
+Opening file (1455)
+Opening file (1456)
+Opening file (1457)
+Opening file (1458)
+Opening file (1459)
+Opening file (1460)
+Opening file (1461)
+Opening file (1462)
+Opening file (1463)
+Opening file (1464)
+Opening file (1465)
+Opening file (1466)
+Opening file (1467)
+Opening file (1468)
+Opening file (1469)
+Opening file (1470)
+Opening file (1471)
+Opening file (1472)
+Opening file (1473)
+Opening file (1474)
+Opening file (1475)
+Opening file (1476)
+Opening file (1477)
+Opening file (1478)
+Opening file (1479)
+Opening file (1480)
+Opening file (1481)
+Opening file (1482)
+Opening file (1483)
+Opening file (1484)
+Opening file (1485)
+Opening file (1486)
+Opening file (1487)
+Opening file (1488)
+Opening file (1489)
+Opening file (1490)
+Opening file (1491)
+Opening file (1492)
+Opening file (1493)
+Opening file (1494)
+Opening file (1495)
+Opening file (1496)
+Opening file (1497)
+Opening file (1498)
+Opening file (1499)
+Opening file (1500)
+Opening file (1501)
+Opening file (1502)
+Opening file (1503)
+Opening file (1504)
+Opening file (1505)
+Opening file (1506)
+Opening file (1507)
+Opening file (1508)
+Opening file (1509)
+Opening file (1510)
+Opening file (1511)
+Opening file (1512)
+Opening file (1513)
+Opening file (1514)
+Opening file (1515)
+Opening file (1516)
+Opening file (1517)
+Opening file (1518)
+Opening file (1519)
+Opening file (1520)
+Opening file (1521)
+Opening file (1522)
+Opening file (1523)
+Opening file (1524)
+Opening file (1525)
+Opening file (1526)
+Opening file (1527)
+Opening file (1528)
+Opening file (1529)
+Opening file (1530)
+Opening file (1531)
+Opening file (1532)
+Opening file (1533)
+Opening file (1534)
+Opening file (1535)
+Opening file (1536)
+Opening file (1537)
+Opening file (1538)
+Opening file (1539)
+Opening file (1540)
+Opening file (1541)
+Opening file (1542)
+Opening file (1543)
+Opening file (1544)
+Opening file (1545)
+Opening file (1546)
+Opening file (1547)
+Opening file (1548)
+Opening file (1549)
+Opening file (1550)
+Opening file (1551)
+Opening file (1552)
+Opening file (1553)
+Opening file (1554)
+Opening file (1555)
+Opening file (1556)
+Opening file (1557)
+Opening file (1558)
+Opening file (1559)
+Opening file (1560)
+Opening file (1561)
+Opening file (1562)
+Opening file (1563)
+Opening file (1564)
+Opening file (1565)
+Opening file (1566)
+Opening file (1567)
+Opening file (1568)
+Opening file (1569)
+Opening file (1570)
+Opening file (1571)
+Opening file (1572)
+Opening file (1573)
+Opening file (1574)
+Opening file (1575)
+Opening file (1576)
+Opening file (1577)
+Opening file (1578)
+Opening file (1579)
+Opening file (1580)
+Opening file (1581)
+Opening file (1582)
+Opening file (1583)
+Opening file (1584)
+Opening file (1585)
+Opening file (1586)
+Opening file (1587)
+Opening file (1588)
+Opening file (1589)
+Opening file (1590)
+Opening file (1591)
+Opening file (1592)
+Opening file (1593)
+Opening file (1594)
+Opening file (1595)
+Opening file (1596)
+Opening file (1597)
+Opening file (1598)
+Opening file (1599)
+Opening file (1600)
+Opening file (1601)
+Opening file (1602)
+Opening file (1603)
+Opening file (1604)
+Opening file (1605)
+Opening file (1606)
+Opening file (1607)
+Opening file (1608)
+Opening file (1609)
+Opening file (1610)
+Opening file (1611)
+Opening file (1612)
+Opening file (1613)
+Opening file (1614)
+Opening file (1615)
+Opening file (1616)
+Opening file (1617)
+Opening file (1618)
+Opening file (1619)
+Opening file (1620)
+Opening file (1621)
+Opening file (1622)
+Opening file (1623)
+Opening file (1624)
+Opening file (1625)
+Opening file (1626)
+Opening file (1627)
+Opening file (1628)
+Opening file (1629)
+Opening file (1630)
+Opening file (1631)
+Opening file (1632)
+Opening file (1633)
+Opening file (1634)
+Opening file (1635)
+Opening file (1636)
+Opening file (1637)
+Opening file (1638)
+Opening file (1639)
+Opening file (1640)
+Opening file (1641)
+Opening file (1642)
+Opening file (1643)
+Opening file (1644)
+Opening file (1645)
+Opening file (1646)
+Opening file (1647)
+Opening file (1648)
+Opening file (1649)
+Opening file (1650)
+Opening file (1651)
+Opening file (1652)
+Opening file (1653)
+Opening file (1654)
+Opening file (1655)
+Opening file (1656)
+Opening file (1657)
+Opening file (1658)
+Opening file (1659)
+Opening file (1660)
+Opening file (1661)
+Opening file (1662)
+Opening file (1663)
+Opening file (1664)
+Opening file (1665)
+Opening file (1666)
+Opening file (1667)
+Opening file (1668)
+Opening file (1669)
+Opening file (1670)
+Opening file (1671)
+Opening file (1672)
+Opening file (1673)
+Opening file (1674)
+Opening file (1675)
+Opening file (1676)
+Opening file (1677)
+Opening file (1678)
+Opening file (1679)
+Opening file (1680)
+Opening file (1681)
+Opening file (1682)
+Opening file (1683)
+Opening file (1684)
+Opening file (1685)
+Opening file (1686)
+Opening file (1687)
+Opening file (1688)
+Opening file (1689)
+Opening file (1690)
+Opening file (1691)
+Opening file (1692)
+Opening file (1693)
+Opening file (1694)
+Opening file (1695)
+Opening file (1696)
+Opening file (1697)
+Opening file (1698)
+Opening file (1699)
+Opening file (1700)
+Opening file (1701)
+Opening file (1702)
+Opening file (1703)
+Opening file (1704)
+Opening file (1705)
+Opening file (1706)
+Opening file (1707)
+Opening file (1708)
+Opening file (1709)
+Opening file (1710)
+Opening file (1711)
+Opening file (1712)
+Opening file (1713)
+Opening file (1714)
+Opening file (1715)
+Opening file (1716)
+Opening file (1717)
+Opening file (1718)
+Opening file (1719)
+Opening file (1720)
+Opening file (1721)
+Opening file (1722)
+Opening file (1723)
+Opening file (1724)
+Opening file (1725)
+Opening file (1726)
+Opening file (1727)
+Opening file (1728)
+Opening file (1729)
+Opening file (1730)
+Opening file (1731)
+Opening file (1732)
+Opening file (1733)
+Opening file (1734)
+Opening file (1735)
+Opening file (1736)
+Opening file (1737)
+Opening file (1738)
+Opening file (1739)
+Opening file (1740)
+Opening file (1741)
+Opening file (1742)
+Opening file (1743)
+Opening file (1744)
+Opening file (1745)
+Opening file (1746)
+Opening file (1747)
+Opening file (1748)
+Opening file (1749)
+Opening file (1750)
+Opening file (1751)
+Opening file (1752)
+Opening file (1753)
+Opening file (1754)
+Opening file (1755)
+Opening file (1756)
+Opening file (1757)
+Opening file (1758)
+Opening file (1759)
+Opening file (1760)
+Opening file (1761)
+Opening file (1762)
+Opening file (1763)
+Opening file (1764)
+Opening file (1765)
+Opening file (1766)
+Opening file (1767)
+Opening file (1768)
+Opening file (1769)
+Opening file (1770)
+Opening file (1771)
+Opening file (1772)
+Opening file (1773)
+Opening file (1774)
+Opening file (1775)
+Opening file (1776)
+Opening file (1777)
+Opening file (1778)
+Opening file (1779)
+Opening file (1780)
+Opening file (1781)
+Opening file (1782)
+Opening file (1783)
+Opening file (1784)
+Opening file (1785)
+Opening file (1786)
+Opening file (1787)
+Opening file (1788)
+Opening file (1789)
+Opening file (1790)
+Opening file (1791)
+Opening file (1792)
+Opening file (1793)
+Opening file (1794)
+Opening file (1795)
+Opening file (1796)
+Opening file (1797)
+Opening file (1798)
+Opening file (1799)
+Opening file (1800)
+Opening file (1801)
+Opening file (1802)
+Opening file (1803)
+Opening file (1804)
+Opening file (1805)
+Opening file (1806)
+Opening file (1807)
+Opening file (1808)
+Opening file (1809)
+Opening file (1810)
+Opening file (1811)
+Opening file (1812)
+Opening file (1813)
+Opening file (1814)
+Opening file (1815)
+Opening file (1816)
+Opening file (1817)
+Opening file (1818)
+Opening file (1819)
+Opening file (1820)
+Opening file (1821)
+Opening file (1822)
+Opening file (1823)
+Opening file (1824)
+Opening file (1825)
+Opening file (1826)
+Opening file (1827)
+Opening file (1828)
+Opening file (1829)
+Opening file (1830)
+Opening file (1831)
+Opening file (1832)
+Opening file (1833)
+Opening file (1834)
+Opening file (1835)
+Opening file (1836)
+Opening file (1837)
+Opening file (1838)
+Opening file (1839)
+Opening file (1840)
+Opening file (1841)
+Opening file (1842)
+Opening file (1843)
+Opening file (1844)
+Opening file (1845)
+Opening file (1846)
+Opening file (1847)
+Opening file (1848)
+Opening file (1849)
+Opening file (1850)
+Opening file (1851)
+Opening file (1852)
+Opening file (1853)
+Opening file (1854)
+Opening file (1855)
+Opening file (1856)
+Opening file (1857)
+Opening file (1858)
+Opening file (1859)
+Opening file (1860)
+Opening file (1861)
+Opening file (1862)
+Opening file (1863)
+Opening file (1864)
+Opening file (1865)
+Opening file (1866)
+Opening file (1867)
+Opening file (1868)
+Opening file (1869)
+Opening file (1870)
+Opening file (1871)
+Opening file (1872)
+Opening file (1873)
+Opening file (1874)
+Opening file (1875)
+Opening file (1876)
+Opening file (1877)
+Opening file (1878)
+Opening file (1879)
+Opening file (1880)
+Opening file (1881)
+Opening file (1882)
+Opening file (1883)
+Opening file (1884)
+Opening file (1885)
+Opening file (1886)
+Opening file (1887)
+Opening file (1888)
+Opening file (1889)
+Opening file (1890)
+Opening file (1891)
+Opening file (1892)
+Opening file (1893)
+Opening file (1894)
+Opening file (1895)
+Opening file (1896)
+Opening file (1897)
+Opening file (1898)
+Opening file (1899)
+Opening file (1900)
+Opening file (1901)
+Opening file (1902)
+Opening file (1903)
+Opening file (1904)
+Opening file (1905)
+Opening file (1906)
+Opening file (1907)
+Opening file (1908)
+Opening file (1909)
+Opening file (1910)
+Opening file (1911)
+Opening file (1912)
+Opening file (1913)
+Opening file (1914)
+Opening file (1915)
+Opening file (1916)
+Opening file (1917)
+Opening file (1918)
+Opening file (1919)
+Opening file (1920)
+Opening file (1921)
+Opening file (1922)
+Opening file (1923)
+Opening file (1924)
+Opening file (1925)
+Opening file (1926)
+Opening file (1927)
+Opening file (1928)
+Opening file (1929)
+Opening file (1930)
+Opening file (1931)
+Opening file (1932)
+Opening file (1933)
+Opening file (1934)
+Opening file (1935)
+Opening file (1936)
+Opening file (1937)
+Opening file (1938)
+Opening file (1939)
+Opening file (1940)
+Opening file (1941)
+Opening file (1942)
+Opening file (1943)
+Opening file (1944)
+Opening file (1945)
+Opening file (1946)
+Opening file (1947)
+Opening file (1948)
+Opening file (1949)
+Opening file (1950)
+Opening file (1951)
+Opening file (1952)
+Opening file (1953)
+Opening file (1954)
+Opening file (1955)
+Opening file (1956)
+Opening file (1957)
+Opening file (1958)
+Opening file (1959)
+Opening file (1960)
+Opening file (1961)
+Opening file (1962)
+Opening file (1963)
+Opening file (1964)
+Opening file (1965)
+Opening file (1966)
+Opening file (1967)
+Opening file (1968)
+Opening file (1969)
+Opening file (1970)
+Opening file (1971)
+Opening file (1972)
+Opening file (1973)
+Opening file (1974)
+Opening file (1975)
+Opening file (1976)
+Opening file (1977)
+Opening file (1978)
+Opening file (1979)
+Opening file (1980)
+Opening file (1981)
+Opening file (1982)
+Opening file (1983)
+Opening file (1984)
+Opening file (1985)
+Opening file (1986)
+Opening file (1987)
+Opening file (1988)
+Opening file (1989)
+Opening file (1990)
+Opening file (1991)
+Opening file (1992)
+Opening file (1993)
+Opening file (1994)
+Opening file (1995)
+Opening file (1996)
+Opening file (1997)
+Opening file (1998)
+Opening file (1999)
+Opening file (2000)
+Opening file (2001)
+Opening file (2002)
+Opening file (2003)
+Opening file (2004)
+Opening file (2005)
+Opening file (2006)
+Opening file (2007)
+Opening file (2008)
+Opening file (2009)
+Opening file (2010)
+Opening file (2011)
+Opening file (2012)
+Opening file (2013)
+Opening file (2014)
+Opening file (2015)
+Opening file (2016)
+Opening file (2017)
+Opening file (2018)
+Opening file (2019)
+Opening file (2020)
+Opening file (2021)
+Opening file (2022)
+Opening file (2023)
+Opening file (2024)
+Opening file (2025)
+Opening file (2026)
+Opening file (2027)
+Opening file (2028)
+Opening file (2029)
+Opening file (2030)
+Opening file (2031)
+Opening file (2032)
+Opening file (2033)
+Opening file (2034)
+Opening file (2035)
+Opening file (2036)
+Opening file (2037)
+Opening file (2038)
+Opening file (2039)
+Opening file (2040)
+Opening file (2041)
+Opening file (2042)
+Opening file (2043)
+Opening file (2044)
+Opening file (2045)
+Opening file (2046)
+Opening file (2047)
+Opening file (2048)
+Opening file (2049)
+Opening file (2050)
+Opening file (2051)
+Opening file (2052)
+Opening file (2053)
+Opening file (2054)
+Opening file (2055)
+Opening file (2056)
+Opening file (2057)
+Opening file (2058)
+Opening file (2059)
+Opening file (2060)
+Opening file (2061)
+Opening file (2062)
+Opening file (2063)
+Opening file (2064)
+Opening file (2065)
+Opening file (2066)
+Opening file (2067)
+Opening file (2068)
+Opening file (2069)
+Opening file (2070)
+Opening file (2071)
+Opening file (2072)
+Opening file (2073)
+Opening file (2074)
+Opening file (2075)
+Opening file (2076)
+Opening file (2077)
+Opening file (2078)
+Opening file (2079)
+Opening file (2080)
+Opening file (2081)
+Opening file (2082)
+Opening file (2083)
+Opening file (2084)
+Opening file (2085)
+Opening file (2086)
+Opening file (2087)
+Opening file (2088)
+Opening file (2089)
+Opening file (2090)
+Opening file (2091)
+Opening file (2092)
+Opening file (2093)
+Opening file (2094)
+Opening file (2095)
+Opening file (2096)
+Opening file (2097)
+Opening file (2098)
+Opening file (2099)
+Opening file (2100)
+Opening file (2101)
+Opening file (2102)
+Opening file (2103)
+Opening file (2104)
+Opening file (2105)
+Opening file (2106)
+Opening file (2107)
+Opening file (2108)
+Opening file (2109)
+Opening file (2110)
+Opening file (2111)
+Opening file (2112)
+Opening file (2113)
+Opening file (2114)
+Opening file (2115)
+Opening file (2116)
+Opening file (2117)
+Opening file (2118)
+Opening file (2119)
+Opening file (2120)
+Opening file (2121)
+Opening file (2122)
+Opening file (2123)
+Opening file (2124)
+Opening file (2125)
+Opening file (2126)
+Opening file (2127)
+Opening file (2128)
+Opening file (2129)
+Opening file (2130)
+Opening file (2131)
+Opening file (2132)
+Opening file (2133)
+Opening file (2134)
+Opening file (2135)
+Opening file (2136)
+Opening file (2137)
+Opening file (2138)
+Opening file (2139)
+Opening file (2140)
+Opening file (2141)
+Opening file (2142)
+Opening file (2143)
+Opening file (2144)
+Opening file (2145)
+Opening file (2146)
+Opening file (2147)
+Opening file (2148)
+Opening file (2149)
+Opening file (2150)
+Opening file (2151)
+Opening file (2152)
+Opening file (2153)
+Opening file (2154)
+Opening file (2155)
+Opening file (2156)
+Opening file (2157)
+Opening file (2158)
+Opening file (2159)
+Opening file (2160)
+Opening file (2161)
+Opening file (2162)
+Opening file (2163)
+Opening file (2164)
+Opening file (2165)
+Opening file (2166)
+Opening file (2167)
+Opening file (2168)
+Opening file (2169)
+Opening file (2170)
+Opening file (2171)
+Opening file (2172)
+Opening file (2173)
+Opening file (2174)
+Opening file (2175)
+Opening file (2176)
+Opening file (2177)
+Opening file (2178)
+Opening file (2179)
+Opening file (2180)
+Opening file (2181)
+Opening file (2182)
+Opening file (2183)
+Opening file (2184)
+Opening file (2185)
+Opening file (2186)
+Opening file (2187)
+Opening file (2188)
+Opening file (2189)
+Opening file (2190)
+Opening file (2191)
+Opening file (2192)
+Opening file (2193)
+Opening file (2194)
+Opening file (2195)
+Opening file (2196)
+Opening file (2197)
+Opening file (2198)
+Opening file (2199)
+Opening file (2200)
+Opening file (2201)
+Opening file (2202)
+Opening file (2203)
+Opening file (2204)
+Opening file (2205)
+Opening file (2206)
+Opening file (2207)
+Opening file (2208)
+Opening file (2209)
+Opening file (2210)
+Opening file (2211)
+Opening file (2212)
+Opening file (2213)
+Opening file (2214)
+Opening file (2215)
+Opening file (2216)
+Opening file (2217)
+Opening file (2218)
+Opening file (2219)
+Opening file (2220)
+Opening file (2221)
+Opening file (2222)
+Opening file (2223)
+Opening file (2224)
+Opening file (2225)
+Opening file (2226)
+Opening file (2227)
+Opening file (2228)
+Opening file (2229)
+Opening file (2230)
+Opening file (2231)
+Opening file (2232)
+Opening file (2233)
+Opening file (2234)
+Opening file (2235)
+Opening file (2236)
+Opening file (2237)
+Opening file (2238)
+Opening file (2239)
+Opening file (2240)
+Opening file (2241)
+Opening file (2242)
+Opening file (2243)
+Opening file (2244)
+Opening file (2245)
+Opening file (2246)
+Opening file (2247)
+Opening file (2248)
+Opening file (2249)
+Opening file (2250)
+Opening file (2251)
+Opening file (2252)
+Opening file (2253)
+Opening file (2254)
+Opening file (2255)
+Opening file (2256)
+Opening file (2257)
+Opening file (2258)
+Opening file (2259)
+Opening file (2260)
+Opening file (2261)
+Opening file (2262)
+Opening file (2263)
+Opening file (2264)
+Opening file (2265)
+Opening file (2266)
+Opening file (2267)
+Opening file (2268)
+Opening file (2269)
+Opening file (2270)
+Opening file (2271)
+Opening file (2272)
+Opening file (2273)
+Opening file (2274)
+Opening file (2275)
+Opening file (2276)
+Opening file (2277)
+Opening file (2278)
+Opening file (2279)
+Opening file (2280)
+Opening file (2281)
+Opening file (2282)
+Opening file (2283)
+Opening file (2284)
+Opening file (2285)
+Opening file (2286)
+Opening file (2287)
+Opening file (2288)
+Opening file (2289)
+Opening file (2290)
+Opening file (2291)
+Opening file (2292)
+Opening file (2293)
+Opening file (2294)
+Opening file (2295)
+Opening file (2296)
+Opening file (2297)
+Opening file (2298)
+Opening file (2299)
+Opening file (2300)
+Opening file (2301)
+Opening file (2302)
+Opening file (2303)
+Opening file (2304)
+Opening file (2305)
+Opening file (2306)
+Opening file (2307)
+Opening file (2308)
+Opening file (2309)
+Opening file (2310)
+Opening file (2311)
+Opening file (2312)
+Opening file (2313)
+Opening file (2314)
+Opening file (2315)
+Opening file (2316)
+Opening file (2317)
+Opening file (2318)
+Opening file (2319)
+Opening file (2320)
+Opening file (2321)
+Opening file (2322)
+Opening file (2323)
+Opening file (2324)
+Opening file (2325)
+Opening file (2326)
+Opening file (2327)
+Opening file (2328)
+Opening file (2329)
+Opening file (2330)
+Opening file (2331)
+Opening file (2332)
+Opening file (2333)
+Opening file (2334)
+Opening file (2335)
+Opening file (2336)
+Opening file (2337)
+Opening file (2338)
+Opening file (2339)
+Opening file (2340)
+Opening file (2341)
+Opening file (2342)
+Opening file (1)
+RNN with categorical cross entropy 4194304 batchs,  2341.74926647  epochs in 59025.398 s
+Last train cost :  1.557787
+recall :  0.535824638525
+sps :  0.677419354839
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0193370165746
+item_coverage :  86
+ndcg :  0.5445267652523956
+user_coverage :  0.89400921659
+-----------------
+4194304 2341.74926647 59025.4089999 1.557787 0.535824638525 0.677419354839 0.0193370165746 86 0.5445267652523956 0.89400921659
+Opening file (2343)
+Opening file (2344)
+Opening file (2345)
+Opening file (2346)
+Opening file (2347)
+Opening file (2348)
+Opening file (2349)
+Opening file (2350)
+Opening file (2351)
+Opening file (2352)
+Opening file (2353)
+Opening file (2354)
+Opening file (2355)
+Opening file (2356)
+Opening file (2357)
+Opening file (2358)
+Opening file (2359)
+Opening file (2360)
+Opening file (2361)
+Opening file (2362)
+Opening file (2363)
+Opening file (2364)
+Opening file (2365)
+Opening file (2366)
+Opening file (2367)
+Opening file (2368)
+Opening file (2369)
+Opening file (2370)
+Opening file (2371)
+Opening file (2372)
+Opening file (2373)
+Opening file (2374)
+Opening file (2375)
+Opening file (2376)
+Opening file (2377)
+Opening file (2378)
+Opening file (2379)
+Opening file (2380)
+Opening file (2381)
+Opening file (2382)
+Opening file (2383)
+Opening file (2384)
+Opening file (2385)
+Opening file (2386)
+Opening file (2387)
+Opening file (2388)
+Opening file (2389)
+Opening file (2390)
+Opening file (2391)
+Opening file (2392)
+Opening file (2393)
+Opening file (2394)
+Opening file (2395)
+Opening file (2396)
+Opening file (2397)
+Opening file (2398)
+Opening file (2399)
+Opening file (2400)
+Opening file (2401)
+Opening file (2402)
+Opening file (2403)
+Opening file (2404)
+Opening file (2405)
+Opening file (2406)
+Opening file (2407)
+Opening file (2408)
+Opening file (2409)
+Opening file (2410)
+Opening file (2411)
+Opening file (2412)
+Opening file (2413)
+Opening file (2414)
+Opening file (2415)
+Opening file (2416)
+Opening file (2417)
+Opening file (2418)
+Opening file (2419)
+Opening file (2420)
+Opening file (2421)
+Opening file (2422)
+Opening file (2423)
+Opening file (2424)
+Opening file (2425)
+Opening file (2426)
+Opening file (2427)
+Opening file (2428)
+Opening file (2429)
+Opening file (2430)
+Opening file (2431)
+Opening file (2432)
+Opening file (2433)
+Opening file (2434)
+Opening file (2435)
+Opening file (2436)
+Opening file (2437)
+Opening file (2438)
+Opening file (2439)
+Opening file (2440)
+Opening file (2441)
+Opening file (2442)
+Opening file (2443)
+Opening file (2444)
+Opening file (2445)
+Opening file (2446)
+Opening file (2447)
+Opening file (2448)
+Opening file (2449)
+Opening file (2450)
+Opening file (2451)
+Opening file (2452)
+Opening file (2453)
+Opening file (2454)
+Opening file (2455)
+Opening file (2456)
+Opening file (2457)
+Opening file (2458)
+Opening file (2459)
+Opening file (2460)
+Opening file (2461)
+Opening file (2462)
+Opening file (2463)
+Opening file (2464)
+Opening file (2465)
+Opening file (2466)
+Opening file (2467)
+Opening file (2468)
+Opening file (2469)
+Opening file (2470)
+Opening file (2471)
+Opening file (2472)
+Opening file (2473)
+Opening file (2474)
+Opening file (2475)
+Opening file (2476)
+Opening file (2477)
+Opening file (2478)
+Opening file (2479)
+Opening file (2480)
+Opening file (2481)
+Opening file (2482)
+Opening file (2483)
+Opening file (2484)
+Opening file (2485)
+Opening file (2486)
+Opening file (2487)
+Opening file (2488)
+Opening file (2489)
+Opening file (2490)
+Opening file (2491)
+Opening file (2492)
+Opening file (2493)
+Opening file (2494)
+Opening file (2495)
+Opening file (2496)
+Opening file (2497)
+Opening file (2498)
+Opening file (2499)
+Opening file (2500)
+Opening file (2501)
+Opening file (2502)
+Opening file (2503)
+Opening file (2504)
+Opening file (2505)
+Opening file (2506)
+Opening file (2507)
+Opening file (2508)
+Opening file (2509)
+Opening file (2510)
+Opening file (2511)
+Opening file (2512)
+Opening file (2513)
+Opening file (2514)
+Opening file (2515)
+Opening file (2516)
+Opening file (2517)
+Opening file (2518)
+Opening file (2519)
+Opening file (2520)
+Opening file (2521)
+Opening file (2522)
+Opening file (2523)
+Opening file (2524)
+Opening file (2525)
+Opening file (2526)
+Opening file (2527)
+Opening file (2528)
+Opening file (2529)
+Opening file (2530)
+Opening file (2531)
+Opening file (2532)
+Opening file (2533)
+Opening file (2534)
+Opening file (2535)
+Opening file (2536)
+Opening file (2537)
+Opening file (2538)
+Opening file (2539)
+Opening file (2540)
+Opening file (2541)
+Opening file (2542)
+Opening file (2543)
+Opening file (2544)
+Opening file (2545)
+Opening file (2546)
+Opening file (2547)
+Opening file (2548)
+Opening file (2549)
+Opening file (2550)
+Opening file (2551)
+Opening file (2552)
+Opening file (2553)
+Opening file (2554)
+Opening file (2555)
+Opening file (2556)
+Opening file (2557)
+Opening file (2558)
+Opening file (2559)
+Opening file (2560)
+Opening file (2561)
+Opening file (2562)
+Opening file (2563)
+Opening file (2564)
+Opening file (2565)
+Opening file (2566)
+Opening file (2567)
+Opening file (2568)
+Opening file (2569)
+Opening file (2570)
+Opening file (2571)
+Opening file (2572)
+Opening file (2573)
+Opening file (2574)
+Opening file (2575)
+Opening file (2576)
+Opening file (2577)
+Opening file (2578)
+Opening file (2579)
+Opening file (2580)
+Opening file (2581)
+Opening file (2582)
+Opening file (2583)
+Opening file (2584)
+Opening file (2585)
+Opening file (2586)
+Opening file (2587)
+Opening file (2588)
+Opening file (2589)
+Opening file (2590)
+Opening file (2591)
+Opening file (2592)
+Opening file (2593)
+Opening file (2594)
+Opening file (2595)
+Opening file (2596)
+Opening file (2597)
+Opening file (2598)
+Opening file (2599)
+Opening file (2600)
+Opening file (2601)
+Opening file (2602)
+Opening file (2603)
+Opening file (2604)
+Opening file (2605)
+Opening file (2606)
+Opening file (2607)
+Opening file (2608)
+Opening file (2609)
+Opening file (2610)
+Opening file (2611)
+Opening file (2612)
+Opening file (2613)
+Opening file (2614)
+Opening file (2615)
+Opening file (2616)
+Opening file (2617)
+Opening file (2618)
+Opening file (2619)
+Opening file (2620)
+Opening file (2621)
+Opening file (2622)
+Opening file (2623)
+Opening file (2624)
+Opening file (2625)
+Opening file (2626)
+Opening file (2627)
+Opening file (2628)
+Opening file (2629)
+Opening file (2630)
+Opening file (2631)
+Opening file (2632)
+Opening file (2633)
+Opening file (2634)
+Opening file (2635)
+Opening file (2636)
+Opening file (2637)
+Opening file (2638)
+Opening file (2639)
+Opening file (2640)
+Opening file (2641)
+Opening file (2642)
+Opening file (2643)
+Opening file (2644)
+forrtl: error (200): program aborting due to control-C event
+Image              PC                Routine            Line        Source
+libifcoremd.dll    00007FF9DB163B58  Unknown               Unknown  Unknown
+KERNELBASE.dll     00007FFA416C62A3  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFA421D7C24  Unknown               Unknown  Unknown
+ntdll.dll          00007FFA43AACEA1  Unknown               Unknown  Unknown
+
+(c:\anaconda3\srs2) C:\dropbox\phD\sequence-based-recommendations>

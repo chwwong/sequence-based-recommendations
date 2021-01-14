@@ -1,0 +1,10 @@
+Opening file (1)
+RNN with categorical cross entropy 2097152 batchs,  1170.84875967  epochs in 29782.885 s
+Last train cost :  1.5789653
+recall :  0.538991228118
+sps :  0.677419354839
+Best  sps :  0.7327188940092166
+blockbuster_share :  0.0191780821918
+item_coverage :  89
+ndcg :  0.5466049376635495
+user_coverage :  0.903225806452

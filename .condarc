@@ -1,0 +1,6 @@
+channels:
+  - defaults
+ssl_verify: true
+envs_dirs:
+  - c:\anaconda3
+

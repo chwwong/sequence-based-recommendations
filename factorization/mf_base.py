@@ -8,6 +8,7 @@ import os
 import glob
 import sys
 from time import time
+from datetime import datetime
 from helpers import evaluation
 
 class MFBase(object):
@@ -214,7 +215,7 @@ class MFBase(object):
 	def _print_progress(self, iterations, epochs, start_time, train_costs, metrics, validation_metrics):
 		'''Print learning progress in terminal
 		'''
-		print(self.name, iterations, "batchs, ", epochs, " epochs in", time() - start_time, "s")
+		print(datetime.now(),self.name, iterations, "batchs, ", epochs, " epochs in", time() - start_time, "s")
 		print("Last train cost : ", train_costs[-1])
 		for m in self.metrics:
 			print(m, ': ', metrics[m][-1])

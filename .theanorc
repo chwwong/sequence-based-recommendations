@@ -1,0 +1,18 @@
+[global]
+device = cuda
+floatX = float32
+
+[nvcc]
+compiler_bindir=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64
+
+[blas]
+ldflags = -LC:\ProgramData\Anaconda3\Library\bin -lmkl_rt
+
+[lib]
+cnmem = 0.8
+#cnmem = 1.0
+
+[dnn]
+enabled=False
+#include_path=C:\CUDA\v9.0\include
+#library_path=C:\CUDA\v9.0\bin

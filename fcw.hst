@@ -1,0 +1,12 @@
+where spyder
+where pycharm
+python -V
+cd\dropbox\tools
+10c:\dropbox\phd\sequence-based-recommendations\data\fcw.ini
+sequence_based_recommender_wam.csv 
+del *.hst
+dir *conflict*
+del *conflict*
+git
+git status
+git status | more

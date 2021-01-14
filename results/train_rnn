@@ -1,0 +1,2 @@
+
+python -d train.py -d ./ -m RNN --r_t LSTM --loss hinge --repeated_interactions --es_m StopAfterN --es_n 5
